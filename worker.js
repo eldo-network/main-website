@@ -10,6 +10,141 @@ export default {
   },
 };
 
+function quoteJob(s) {
+  const enterpriseSignals = [
+    s.gb_size >= 100,
+    s.source_count >= 4,
+    s.table_count >= 30,
+    ['finance', 'legal', 'healthcare'].includes(s.industry) && s.has_pii,
+    s.needs_schema_redesign && s.needs_entity_resolution,
+    s.needs_schema_redesign && s.needs_llm_enrichment,
+  ].filter(Boolean).length;
+
+  const midMarketSignals = [
+    s.gb_size >= 20,
+    s.source_count >= 2,
+    s.table_count >= 15,
+    s.unstructured,
+    s.needs_entity_resolution,
+    s.needs_llm_enrichment,
+    s.needs_schema_redesign,
+    ['engineering', 'manufacturing', 'finance', 'legal', 'healthcare'].includes(s.industry),
+  ].filter(Boolean).length;
+
+  let tier;
+  if (enterpriseSignals >= 2 || s.gb_size >= 250) tier = 'enterprise';
+  else if (midMarketSignals >= 3 || s.gb_size >= 20) tier = 'professional';
+  else tier = 'essentials';
+
+  let complexity_points = 0;
+  if (s.table_count > 5)  complexity_points += 1;
+  if (s.table_count > 20) complexity_points += 1;
+  if (s.source_count > 1) complexity_points += 1;
+  if (s.source_count > 3) complexity_points += 1;
+  if (s.unstructured)            complexity_points += 2;
+  if (s.needs_dedup)             complexity_points += 1;
+  if (s.needs_entity_resolution) complexity_points += 2;
+  if (s.needs_llm_enrichment)    complexity_points += 2;
+  if (s.needs_schema_redesign)   complexity_points += 2;
+  if (s.has_pii)                 complexity_points += 1;
+
+  if (tier === 'enterprise') {
+    return {
+      tier, price: null, delivery_days: null,
+      delivery_hint: 'Typically 8–20 weeks depending on scope',
+      complexity_points, manual_review: true,
+    };
+  }
+
+  const tierConfig = {
+    essentials: {
+      base_price: 5000,
+      volume_tiers: [
+        { upto: 10,       rate: 400 },
+        { upto: 50,       rate: 300 },
+        { upto: Infinity, rate: 300 },
+      ],
+      complexity_curve: [
+        { upto: 2,        mult: 1.0 },
+        { upto: 5,        mult: 1.3 },
+        { upto: 8,        mult: 1.6 },
+        { upto: Infinity, mult: 2.0 },
+      ],
+    },
+    professional: {
+      base_price: 25000,
+      volume_tiers: [
+        { upto: 20,       rate: 0   },
+        { upto: 100,      rate: 800 },
+        { upto: 250,      rate: 500 },
+        { upto: Infinity, rate: 500 },
+      ],
+      complexity_curve: [
+        { upto: 2,        mult: 1.0 },
+        { upto: 5,        mult: 1.4 },
+        { upto: 8,        mult: 1.8 },
+        { upto: Infinity, mult: 2.3 },
+      ],
+    },
+  };
+
+  const cfg = tierConfig[tier];
+
+  let volume_price = 0;
+  let remaining = s.gb_size;
+  let prevThreshold = 0;
+  for (const band of cfg.volume_tiers) {
+    const bandSize = Math.min(remaining, band.upto - prevThreshold);
+    if (bandSize > 0) volume_price += bandSize * band.rate;
+    remaining -= bandSize;
+    prevThreshold = band.upto;
+    if (remaining <= 0) break;
+  }
+
+  let complexity_multiplier = 1.0;
+  for (const band of cfg.complexity_curve) {
+    if (complexity_points <= band.upto) { complexity_multiplier = band.mult; break; }
+  }
+
+  const industry_multipliers = {
+    general: 1.0, ecommerce: 1.0, restaurant: 1.0,
+    realestate: 1.1, engineering: 1.2, manufacturing: 1.2,
+    finance: 1.45, legal: 1.5, healthcare: 1.55,
+  };
+  const industry_multiplier = industry_multipliers[s.industry] ?? 1.15;
+  const urgency_multiplier = s.expedited ? 1.35 : 1.0;
+
+  const subtotal = cfg.base_price + volume_price;
+  const total_price = subtotal * complexity_multiplier * industry_multiplier * urgency_multiplier;
+
+  const CURRENT_QUEUE_JOBS = 0;
+  let base_days = tier === 'professional' ? 20 : 10;
+  if (s.gb_size > 10)  base_days += 2;
+  if (s.gb_size > 50)  base_days += 4;
+  if (s.gb_size > 100) base_days += 6;
+  base_days += Math.floor(complexity_points / 2) * (tier === 'professional' ? 2 : 1);
+  base_days += CURRENT_QUEUE_JOBS;
+
+  const delivery_days = s.expedited
+    ? Math.max(5, Math.round(base_days * 0.7))
+    : base_days;
+
+  const manual_review = (
+    s.industry === 'other' ||
+    complexity_points >= 9 ||
+    (['legal', 'healthcare'].includes(s.industry) && s.has_pii) ||
+    (s.needs_schema_redesign && s.needs_entity_resolution && s.needs_llm_enrichment)
+  );
+
+  return {
+    tier,
+    price: Math.round(total_price / 100) * 100,
+    delivery_days,
+    manual_review,
+    complexity_points,
+  };
+}
+
 async function handleQuote(request, env) {
   try {
     const body = await request.json();
@@ -28,67 +163,37 @@ async function handleQuote(request, env) {
 
     const tableCount = sourceCount * 3 + (gbSize > 10 ? 5 : 0) + (gbSize > 50 ? 10 : 0);
 
-    const basePrice = 2500;
-    let volumePrice;
-    if (gbSize <= 10) {
-      volumePrice = gbSize * 250;
-    } else if (gbSize <= 100) {
-      volumePrice = 10 * 250 + (gbSize - 10) * 175;
-    } else {
-      volumePrice = 10 * 250 + 90 * 175 + (gbSize - 100) * 125;
+    const quote = quoteJob({
+      gb_size: gbSize,
+      source_count: sourceCount,
+      table_count: tableCount,
+      industry,
+      has_pii: hasPii,
+      unstructured,
+      needs_dedup: needsDedup,
+      needs_entity_resolution: needsEntityResolution,
+      needs_llm_enrichment: needsLlmEnrichment,
+      needs_schema_redesign: needsSchemaRedesign,
+      expedited,
+    });
+
+    const complexityPoints = quote.complexity_points;
+    const manualReview = quote.manual_review;
+
+    // Convert delivery_days → human range; null for enterprise
+    let deliveryRange = null;
+    if (quote.delivery_days !== null) {
+      const lo = Math.floor(quote.delivery_days / 5);
+      const hi = lo + 1;
+      deliveryRange = `${lo}–${hi} weeks`;
     }
 
-    let complexityPoints = 0;
-    if (tableCount > 5) complexityPoints += 1;
-    if (tableCount > 20) complexityPoints += 1;
-    if (sourceCount > 1) complexityPoints += 1;
-    if (sourceCount > 3) complexityPoints += 1;
-    if (unstructured) complexityPoints += 2;
-    if (needsDedup) complexityPoints += 1;
-    if (needsEntityResolution) complexityPoints += 2;
-    if (needsLlmEnrichment) complexityPoints += 2;
-    if (needsSchemaRedesign) complexityPoints += 2;
-    if (hasPii) complexityPoints += 1;
-
-    let complexityMultiplier;
-    if (complexityPoints <= 2) complexityMultiplier = 1.0;
-    else if (complexityPoints <= 5) complexityMultiplier = 1.25;
-    else if (complexityPoints <= 8) complexityMultiplier = 1.5;
-    else complexityMultiplier = 1.85;
-
-    const industryMultipliers = {
-      general: 1.0,
-      ecommerce: 1.0,
-      restaurant: 1.0,
-      realestate: 1.05,
-      engineering: 1.15,
-      manufacturing: 1.15,
-      finance: 1.3,
-      legal: 1.35,
-      healthcare: 1.4,
-    };
-    const industryMultiplier = industryMultipliers[industry] || 1.2;
-    const urgencyMultiplier = expedited ? 1.3 : 1.0;
-
-    const subtotal = Math.max(basePrice, basePrice + volumePrice);
-    const totalPrice = subtotal * complexityMultiplier * industryMultiplier * urgencyMultiplier;
-
-    let deliveryRange;
-    if (complexityPoints <= 2) deliveryRange = "2–3 weeks";
-    else if (complexityPoints <= 5) deliveryRange = "3–5 weeks";
-    else if (complexityPoints <= 8) deliveryRange = "5–8 weeks";
-    else deliveryRange = "8–12 weeks";
-
-    const manualReview =
-      industry === "other" ||
-      gbSize > 150 ||
-      complexityPoints >= 9 ||
-      (["legal", "healthcare"].includes(industry) && hasPii) ||
-      (needsSchemaRedesign && needsEntityResolution && needsLlmEnrichment);
-
-    const roundedPrice = Math.round(totalPrice / 100) * 100;
-    const priceLow = Math.round((roundedPrice * 0.9) / 100) * 100;
-    const priceHigh = Math.round((roundedPrice * 1.1) / 100) * 100;
+    // Build price range from single midpoint; null for enterprise
+    let priceLow = null, priceHigh = null;
+    if (quote.price !== null) {
+      priceLow  = Math.round((quote.price * 0.9) / 100) * 100;
+      priceHigh = Math.round((quote.price * 1.1) / 100) * 100;
+    }
 
     const industryLabels = {
       ecommerce: "E-commerce / Retail",
@@ -144,12 +249,14 @@ async function handleQuote(request, env) {
         <p style="margin:0 0 4px;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#94a3b8">Eldo Network</p>
         <h1 style="margin:0 0 24px;font-size:22px;font-weight:600">New quote request</h1>
         <p style="margin:0 0 24px;font-size:15px;color:#cbd5e1">From <a href="mailto:${email}" style="color:#f1c453">${email}</a></p>
+        <p style="margin:0 0 16px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#475569">Tier: ${quote.tier}</p>
         ${manualReview ? `<p style="background:#422006;color:#fbbf24;padding:12px 16px;border-radius:8px;font-size:13px;margin:0 0 24px">⚠ Manual review flagged — do not send standard pricing without a custom scope call.</p>` : ""}
         <table style="width:100%;border-collapse:collapse;font-size:14px;margin-bottom:24px">${scopeRows}</table>
         <div style="background:#0f172a;border-radius:8px;padding:20px;margin-bottom:24px">
           <p style="margin:0 0 4px;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#94a3b8">Estimate shown to client</p>
-          <p style="margin:0;font-size:28px;font-weight:700;color:#f1c453">${manualReview ? "Manual review" : estimateRange}</p>
-          ${!manualReview ? `<p style="margin:6px 0 0;font-size:13px;color:#94a3b8">Delivery: ${deliveryRange} &nbsp;·&nbsp; Complexity score: ${complexityPoints}</p>` : ""}
+          <p style="margin:0;font-size:28px;font-weight:700;color:#f1c453">${priceLow === null ? "Enterprise — custom scope" : estimateRange}</p>
+          ${priceLow !== null ? `<p style="margin:6px 0 0;font-size:13px;color:#94a3b8">Delivery: ${deliveryRange} &nbsp;·&nbsp; Complexity score: ${complexityPoints}</p>` : ""}
+          ${priceLow === null ? `<p style="margin:6px 0 0;font-size:13px;color:#94a3b8">Internal range: $250k–$1.5M · Delivery: 8–20 weeks</p>` : ""}
         </div>
         <a href="mailto:${email}" style="display:inline-block;background:#f1c453;color:#0b0f14;font-weight:600;font-size:14px;padding:12px 24px;border-radius:8px;text-decoration:none">Reply to ${email}</a>
       </div>
@@ -210,6 +317,7 @@ async function handleQuote(request, env) {
 
     return new Response(
       JSON.stringify({
+        tier: quote.tier,
         price_low: priceLow,
         price_high: priceHigh,
         delivery_range: deliveryRange,

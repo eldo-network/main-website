@@ -729,9 +729,10 @@
         });
         const data = await res.json();
 
-        document.getElementById('quote-price').textContent =
-          formatCurrency(data.price_low) + ' – ' + formatCurrency(data.price_high);
-        document.getElementById('quote-days').textContent = data.delivery_range;
+        document.getElementById('quote-price').textContent = data.price_low === null
+          ? 'Let\'s talk'
+          : formatCurrency(data.price_low) + ' – ' + formatCurrency(data.price_high);
+        document.getElementById('quote-days').textContent = data.delivery_range ?? 'Scoped on first call';
         document.getElementById('quote-email').textContent = payload.email;
         document.getElementById('quote-review').classList.toggle('hidden', !data.manual_review);
 
