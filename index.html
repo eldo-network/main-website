@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%23e8c547'/><stop offset='100%25' stop-color='%23c9a227'/></linearGradient></defs><rect width='32' height='32' rx='6' fill='url(%23g)'/></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
@@ -26,12 +26,13 @@
     }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
       font-feature-settings: "ss01", "cv11";
     }
-    .serif { font-family: 'Fraunces', ui-serif, Georgia, serif; font-optical-sizing: auto; }
-    .mono  { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+    .serif { font-family: 'Instrument Serif', ui-serif, Georgia, serif; font-optical-sizing: auto; }
+    .mono  { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
     .gold { color: var(--gold); }
+    .highlight { color: #f8f4ee; }
     .gold-bg { background: linear-gradient(135deg, #e8c547, #c9a227); }
     .glass { background: rgba(255,255,255,0.035); box-shadow: 0 10px 30px rgba(0,0,0,0.25); backdrop-filter: blur(8px); }
     .hairline { border-color: rgba(255,255,255,0.08); }
@@ -52,13 +53,13 @@
     }
     .rule { height: 1px; background: linear-gradient(90deg, transparent, rgba(241,196,83,0.45), transparent); }
     .eyebrow {
-      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em;
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.22em;
       text-transform: uppercase; color: #d1c38a;
     }
     .tag {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 4px 10px; border: 1px solid rgba(241,196,83,0.25);
-      border-radius: 999px; font-family: 'JetBrains Mono', monospace;
+      border-radius: 999px; font-family: 'IBM Plex Mono', monospace;
       font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
       color: #e8d9a3; background: rgba(241,196,83,0.04);
     }
@@ -72,7 +73,7 @@
     .card:hover { transform: translateY(-2px); border-color: rgba(241,196,83,0.35); }
     .card .num {
       position: absolute; top: 18px; right: 22px;
-      font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(241,196,83,0.55);
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(241,196,83,0.55);
     }
     .step-line {
       position: absolute; left: 19px; top: 40px; bottom: -24px; width: 1px;
@@ -81,7 +82,7 @@
     .step-dot {
       width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center;
       background: rgba(241,196,83,0.08); border: 1px solid rgba(241,196,83,0.35);
-      color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 13px;
+      color: var(--gold); font-family: 'IBM Plex Mono', monospace; font-size: 13px;
     }
     .marquee-mask {
       mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
@@ -99,7 +100,7 @@
 
     .schema-row { display: grid; grid-template-columns: 18px 1fr auto; gap: 10px; align-items: center; padding: 7px 0; }
     .schema-row + .schema-row { border-top: 1px dashed rgba(255,255,255,0.06); }
-    .pill { font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 2px 7px; border-radius: 6px; letter-spacing: 0.05em; }
+    .pill { font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 2px 7px; border-radius: 6px; letter-spacing: 0.05em; }
     .pill-bad { background: rgba(239, 68, 68, 0.12); color: #fca5a5; border: 1px solid rgba(239,68,68,0.25); }
     .pill-ok { background: rgba(241,196,83,0.12); color: #f1c453; border: 1px solid rgba(241,196,83,0.3); }
     .arrow-col { display: flex; align-items: center; justify-content: center; color: rgba(241,196,83,0.55); }
@@ -109,8 +110,9 @@
     .pain-x {
       flex-shrink: 0; width: 26px; height: 26px; border-radius: 8px;
       background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239,68,68,0.2);
-      display: grid; place-items: center; color: #fca5a5; font-family: 'JetBrains Mono', monospace; font-size: 13px;
+      display: grid; place-items: center; color: #fca5a5; font-family: 'IBM Plex Mono', monospace; font-size: 13px;
     }
+    select option { background: #151b24; color: #e2e8f0; }
   </style>
 </head>
 <body class="min-h-screen bg-[#0b0f14] text-slate-200 selection:bg-yellow-200 selection:text-black antialiased">
@@ -130,7 +132,7 @@
           <a href="#problem" class="hover:text-white transition">The Problem</a>
           <a href="#services" class="hover:text-white transition">What We Do</a>
           <a href="#process" class="hover:text-white transition">How It Works</a>
-          <a href="#contact" class="px-4 py-2 rounded-lg border hairline hover:border-yellow-300/60 transition">Get in touch</a>
+          <a href="#contact" class="px-4 py-2 rounded-lg border hairline hover:border-yellow-300/60 transition">Get started</a>
         </div>
       </nav>
     </div>
@@ -143,7 +145,7 @@
           </div>
 
           <h1 class="mt-6 text-5xl md:text-7xl font-semibold leading-[1.02] tracking-tight reveal reveal-2">
-            Data isn't the gold. <span class="serif italic gold">Refined</span> data is.
+            Data isn't the gold. <span class="serif italic highlight">Refined</span> data is.
           </h1>
 
           <p class="mt-7 text-lg text-slate-300 max-w-2xl leading-relaxed reveal reveal-3">
@@ -152,7 +154,7 @@
 
           <div class="mt-10 flex flex-wrap items-center gap-4 reveal reveal-4">
             <a href="#contact" class="px-6 py-3 rounded-xl bg-white text-black font-medium hover:bg-yellow-50 transition">
-              Get in touch →
+              Get started →
             </a>
             <a href="#problem" class="px-6 py-3 rounded-xl border hairline text-slate-200 hover:border-yellow-300/60 transition">
               Does this sound familiar?
@@ -240,7 +242,7 @@
     <div class="grid md:grid-cols-12 gap-10 items-start">
       <div class="md:col-span-5">
         <div class="eyebrow">01 · The Problem</div>
-        <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">Sound <span class="italic gold">familiar?</span></h2>
+        <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">Sound <span class="italic highlight">familiar?</span></h2>
         <p class="mt-5 text-slate-400 leading-relaxed">Most businesses don't have a data problem. They have a <em>data readiness</em> problem. The information is all there. It's just not in a shape anyone can use yet.</p>
       </div>
       <div class="md:col-span-7">
@@ -292,7 +294,7 @@
     <div class="grid md:grid-cols-12 gap-10 items-center">
       <div class="md:col-span-5">
         <div class="eyebrow">02 · What we do</div>
-        <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">We fix the layer <span class="italic gold">underneath</span> every project you can't get off the ground.</h2>
+        <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">We fix the layer <span class="italic highlight">underneath</span> every project you can't get off the ground.</h2>
       </div>
       <div class="md:col-span-7">
         <p class="text-lg text-slate-300 leading-relaxed">
@@ -397,7 +399,7 @@
       <div class="flex items-end justify-between flex-wrap gap-4 mb-14">
         <div>
           <div class="eyebrow">04 · Who we work with</div>
-          <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">Built for leaders who can <span class="italic gold">see the potential</span> their data is hiding.</h2>
+          <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">Built for leaders who can <span class="italic highlight">see the potential</span> their data is hiding.</h2>
         </div>
       </div>
 
@@ -471,7 +473,7 @@
     <div class="grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
         <div class="eyebrow">06 · How it works</div>
-        <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">Straightforward from <span class="italic gold">first call</span> to delivery.</h2>
+        <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">Straightforward from <span class="italic highlight">first call</span> to delivery.</h2>
         <p class="mt-5 text-slate-400 text-sm max-w-sm">No long discovery slog. We move fast, keep you in the loop, and hand off something your team can actually use.</p>
       </div>
 
@@ -521,24 +523,148 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+  <!-- ═══════════════════════════ SCOPE / QUOTE ═══════════════════════════ -->
   <section id="contact" class="relative overflow-hidden">
     <div class="absolute inset-0 grid-lines opacity-40"></div>
     <div class="halo" style="inset: auto auto -30% -10%;"></div>
 
-    <div class="relative max-w-4xl mx-auto px-6 py-28 text-center">
-      <div class="eyebrow">07 · Get in touch</div>
-      <h2 class="serif mt-4 text-4xl md:text-6xl font-medium leading-[1.05]">
-        Bring the <span class="italic gold">mess</span>. We'll take it from there.
-      </h2>
-      <div class="mt-10 flex flex-col items-center gap-3">
-        <button onclick="copyEmail()" class="group inline-flex items-center gap-3 px-8 py-5 rounded-2xl bg-white text-black font-medium text-lg hover:bg-yellow-50 transition cursor-pointer">
-          <span>hello@eldo.network</span>
-          <svg class="opacity-50 group-hover:opacity-100 transition" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
-        </button>
-        <div id="copy-status-footer" class="text-sm gold opacity-0 transition-opacity mono">→ copied to clipboard</div>
+    <div class="relative max-w-3xl mx-auto px-6 py-28">
+      <div class="text-center">
+        <div class="eyebrow">07 · Get started</div>
+        <h2 class="serif mt-4 text-4xl md:text-6xl font-medium leading-[1.05]">
+          Scope your project in <span class="italic highlight">60 seconds</span>.
+        </h2>
+        <p class="mt-5 text-slate-400 max-w-xl mx-auto">Answer a few quick questions and we'll give you an instant estimate. No calls, no commitment.</p>
       </div>
-      <p class="mt-10 text-xs mono text-slate-500 tracking-widest">DATA CLEANSING · ENRICHMENT · INTEGRATION · DASHBOARD &amp; AI READINESS</p>
+
+      <!-- Quote form -->
+      <form id="quote-form" class="mt-14 space-y-5">
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label class="eyebrow block mb-2">Industry</label>
+            <select name="industry" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm appearance-none cursor-pointer focus:outline-none focus:border-yellow-300/50 transition">
+              <option value="" disabled selected>Select your industry</option>
+              <option value="ecommerce">E-commerce / Retail</option>
+              <option value="restaurant">Restaurant / Hospitality</option>
+              <option value="realestate">Real Estate</option>
+              <option value="engineering">Engineering / Construction</option>
+              <option value="manufacturing">Manufacturing</option>
+              <option value="finance">Finance / Fintech</option>
+              <option value="legal">Legal</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="other">Other / Not listed</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="eyebrow block mb-2">How much data?</label>
+            <select name="gb_size" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm appearance-none cursor-pointer focus:outline-none focus:border-yellow-300/50 transition">
+              <option value="" disabled selected>Estimate the size</option>
+              <option value="0.5">A few spreadsheets</option>
+              <option value="5">Small database (1–10 GB)</option>
+              <option value="30">Medium dataset (10–50 GB)</option>
+              <option value="75">Large dataset (50–100 GB)</option>
+              <option value="150">Enterprise scale (100+ GB)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="eyebrow block mb-2">How many sources?</label>
+            <select name="source_count" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm appearance-none cursor-pointer focus:outline-none focus:border-yellow-300/50 transition">
+              <option value="" disabled selected>Systems involved</option>
+              <option value="1">Just one system</option>
+              <option value="2">2–3 systems</option>
+              <option value="4">4–5 systems</option>
+              <option value="6">6 or more</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="eyebrow block mb-2">Contains sensitive data?</label>
+            <select name="has_pii" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm appearance-none cursor-pointer focus:outline-none focus:border-yellow-300/50 transition">
+              <option value="" disabled selected>PII, PHI, financial, etc.</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="eyebrow block mb-3">What do you need?</label>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-yellow-300/30 transition text-sm text-slate-300">
+              <input type="checkbox" name="needs_dedup" class="accent-yellow-400 w-4 h-4" />
+              Remove duplicates
+            </label>
+            <label class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-yellow-300/30 transition text-sm text-slate-300">
+              <input type="checkbox" name="needs_entity_resolution" class="accent-yellow-400 w-4 h-4" />
+              Match &amp; merge records across sources
+            </label>
+            <label class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-yellow-300/30 transition text-sm text-slate-300">
+              <input type="checkbox" name="needs_llm_enrichment" class="accent-yellow-400 w-4 h-4" />
+              AI-powered enrichment
+            </label>
+            <label class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-yellow-300/30 transition text-sm text-slate-300">
+              <input type="checkbox" name="needs_schema_redesign" class="accent-yellow-400 w-4 h-4" />
+              Restructure / redesign schema
+            </label>
+            <label class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-yellow-300/30 transition text-sm text-slate-300">
+              <input type="checkbox" name="unstructured" class="accent-yellow-400 w-4 h-4" />
+              Unstructured data (docs, PDFs, emails)
+            </label>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label class="eyebrow block mb-2">Timeline</label>
+            <select name="expedited" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm appearance-none cursor-pointer focus:outline-none focus:border-yellow-300/50 transition">
+              <option value="false">Standard</option>
+              <option value="true">Expedited (+30%)</option>
+            </select>
+          </div>
+          <div>
+            <label class="eyebrow block mb-2">Your email</label>
+            <input type="email" name="email" required placeholder="you@company.com" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm placeholder-slate-500 focus:outline-none focus:border-yellow-300/50 transition" />
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <button type="submit" id="quote-btn" class="w-full px-8 py-4 rounded-xl bg-white text-black font-medium text-lg hover:bg-yellow-50 transition cursor-pointer">
+            Get your estimate →
+          </button>
+        </div>
+      </form>
+
+      <!-- Quote result -->
+      <div id="quote-result" class="hidden mt-10">
+        <div class="glass rounded-2xl p-8 border hairline text-center">
+          <div class="eyebrow mb-2">Your estimate</div>
+          <div class="serif text-5xl md:text-6xl font-medium gold" id="quote-price"></div>
+          <div class="mt-4 flex items-center justify-center gap-6 text-sm text-slate-300">
+            <div class="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="gold"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span>Usually delivered in <strong id="quote-days" class="text-white"></strong></span>
+            </div>
+          </div>
+          <div id="quote-review" class="hidden mt-4 text-sm text-yellow-300/80 mono">
+            ⚠ Complex scope — we'll follow up with a custom proposal
+          </div>
+          <div class="rule mt-6 mb-6"></div>
+          <p class="text-sm text-slate-400">We'll send a detailed scope to <strong id="quote-email" class="text-slate-200"></strong> shortly.</p>
+          <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <button onclick="copyEmail()" class="group inline-flex items-center gap-2 px-6 py-3 rounded-xl border hairline text-slate-200 hover:border-yellow-300/60 transition cursor-pointer">
+              <span>hello@eldo.network</span>
+              <svg class="opacity-50 group-hover:opacity-100 transition" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
+            </button>
+            <button onclick="resetForm()" class="px-6 py-3 rounded-xl text-sm text-slate-400 hover:text-white transition cursor-pointer">
+              ← Adjust scope
+            </button>
+          </div>
+          <div id="copy-status-footer" class="mt-2 text-sm gold opacity-0 transition-opacity mono">→ copied to clipboard</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -560,13 +686,64 @@
 
     function copyEmail() {
       navigator.clipboard.writeText('hello@eldo.network').then(() => {
-        const statusFooter = document.getElementById('copy-status-footer');
-        if (statusFooter) {
-          statusFooter.style.opacity = '1';
-          setTimeout(() => statusFooter.style.opacity = '0', 2000);
-        }
+        const el = document.getElementById('copy-status-footer');
+        if (el) { el.style.opacity = '1'; setTimeout(() => el.style.opacity = '0', 2000); }
       });
     }
+
+    function resetForm() {
+      document.getElementById('quote-result').classList.add('hidden');
+      document.getElementById('quote-form').classList.remove('hidden');
+    }
+
+    function formatCurrency(n) {
+      return '$' + n.toLocaleString('en-US');
+    }
+
+    document.getElementById('quote-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('quote-btn');
+      btn.textContent = 'Calculating…';
+      btn.disabled = true;
+
+      const fd = new FormData(e.target);
+      const payload = {
+        industry: fd.get('industry'),
+        gb_size: fd.get('gb_size'),
+        source_count: fd.get('source_count'),
+        has_pii: fd.get('has_pii'),
+        needs_dedup: fd.has('needs_dedup'),
+        needs_entity_resolution: fd.has('needs_entity_resolution'),
+        needs_llm_enrichment: fd.has('needs_llm_enrichment'),
+        needs_schema_redesign: fd.has('needs_schema_redesign'),
+        unstructured: fd.has('unstructured'),
+        expedited: fd.get('expedited') === 'true',
+        email: fd.get('email'),
+      };
+
+      try {
+        const res = await fetch('/api/quote', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+
+        document.getElementById('quote-price').textContent =
+          formatCurrency(data.price_low) + ' – ' + formatCurrency(data.price_high);
+        document.getElementById('quote-days').textContent = data.delivery_range;
+        document.getElementById('quote-email').textContent = payload.email;
+        document.getElementById('quote-review').classList.toggle('hidden', !data.manual_review);
+
+        document.getElementById('quote-form').classList.add('hidden');
+        document.getElementById('quote-result').classList.remove('hidden');
+      } catch (err) {
+        alert('Something went wrong. Please email hello@eldo.network directly.');
+      }
+
+      btn.textContent = 'Get your estimate →';
+      btn.disabled = false;
+    });
   </script>
 </body>
 </html>
