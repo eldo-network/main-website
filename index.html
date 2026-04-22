@@ -654,14 +654,15 @@
           <div class="rule mt-6 mb-6"></div>
           <p class="text-sm text-slate-400">We'll send a detailed scope to <strong id="quote-email" class="text-slate-200"></strong> shortly.</p>
           <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="mailto:joseph@eldo.network" class="group inline-flex items-center gap-2 px-6 py-3 rounded-xl border hairline text-slate-200 hover:border-yellow-300/60 transition">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="opacity-50 group-hover:opacity-100 transition"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <button onclick="copyEmail()" class="group inline-flex items-center gap-2 px-6 py-3 rounded-xl border hairline text-slate-200 hover:border-yellow-300/60 transition cursor-pointer">
               <span>joseph@eldo.network</span>
-            </a>
+              <svg class="opacity-50 group-hover:opacity-100 transition" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
+            </button>
             <button onclick="resetForm()" class="px-6 py-3 rounded-xl text-sm text-slate-400 hover:text-white transition cursor-pointer">
               ← Adjust scope
             </button>
           </div>
+          <div id="copy-status-footer" class="mt-2 text-sm gold opacity-0 transition-opacity mono">→ copied to clipboard</div>
         </div>
       </div>
     </div>
@@ -684,7 +685,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     function copyEmail() {
-      navigator.clipboard.writeText('hello@eldo.network').then(() => {
+      navigator.clipboard.writeText('joseph@eldo.network').then(() => {
         const el = document.getElementById('copy-status-footer');
         if (el) { el.style.opacity = '1'; setTimeout(() => el.style.opacity = '0', 2000); }
       });
