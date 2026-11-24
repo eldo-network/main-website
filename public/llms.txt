@@ -1,4 +1,4 @@
-# Eldo Network
+# Eldo
 
 > Modern tools for owner-run businesses. Eldo takes the work your office does by hand and makes it happen on its own, so you can see your business from your phone.
 
