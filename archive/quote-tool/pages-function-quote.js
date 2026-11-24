@@ -182,7 +182,7 @@ export async function onRequestPost(context) {
 
         <div style="border-top:1px solid #1e293b;padding-top:24px">
           <p style="margin:0;font-size:14px;color:#cbd5e1">We'll follow up at this address within one business day to talk through scope and next steps. Just reply to this email if you have questions in the meantime.</p>
-          <p style="margin:16px 0 0;font-size:14px;color:#94a3b8">— Joseph, Eldo Network<br><a href="mailto:hello@eldo.network" style="color:#f1c453">hello@eldo.network</a></p>
+          <p style="margin:16px 0 0;font-size:14px;color:#94a3b8">— Joseph, Eldo Network<br><a href="mailto:joseph@eldo.network" style="color:#f1c453">joseph@eldo.network</a></p>
         </div>
       </div>
     `;
@@ -195,8 +195,8 @@ export async function onRequestPost(context) {
           method: "POST",
           headers: { "Content-Type": "application/json", Authorization: `Bearer ${resendKey}` },
           body: JSON.stringify({
-            from: "Eldo Network <hello@eldo.network>",
-            to: ["hello@eldo.network"],
+            from: "Eldo Network <joseph@eldo.network>",
+            to: ["joseph@eldo.network"],
             reply_to: email,
             subject: `New quote request — ${email}`,
             html: internalHtml,
@@ -206,9 +206,9 @@ export async function onRequestPost(context) {
           method: "POST",
           headers: { "Content-Type": "application/json", Authorization: `Bearer ${resendKey}` },
           body: JSON.stringify({
-            from: "Eldo Network <hello@eldo.network>",
+            from: "Eldo Network <joseph@eldo.network>",
             to: [email],
-            reply_to: "hello@eldo.network",
+            reply_to: "joseph@eldo.network",
             subject: manualReview
               ? "Your Eldo Network estimate — let's talk scope"
               : `Your Eldo Network estimate — ${estimateRange}`,
