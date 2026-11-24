@@ -1,1 +1,90 @@
-Coming soon.
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy · Eldo</title>
+  <meta name="description" content="How the Eldo website, eldo.network, handles your information." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23b08a3e'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#faf8f3; --ink:#1b2a3a; --muted:#4a5663; --line:#e3ddd1; --accent:#2f5d50; --detail:#b08a3e; }
+    *,*::before,*::after { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:18px/1.7 'Public Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+    .wrap { max-width:720px; margin:0 auto; padding:0 24px; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:28px 0; }
+    .brand { display:flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none; font:600 1.2rem 'Newsreader',Georgia,serif; }
+    .brand-mark { width:14px; height:14px; border-radius:3px; background:var(--detail); }
+    nav a.back { color:var(--accent); font-size:1rem; }
+    h1 { font:500 clamp(2.2rem,5vw,3rem)/1.1 'Newsreader',Georgia,serif; margin:32px 0 8px; }
+    h2 { font:500 1.45rem/1.3 'Newsreader',Georgia,serif; margin:40px 0 8px; }
+    .updated { color:var(--muted); margin:0 0 24px; }
+    .lede { font-size:1.1rem; color:var(--muted); }
+    ul { padding-left:1.2em; }
+    li { margin:6px 0; }
+    a { color:var(--accent); }
+    main { padding-bottom:64px; }
+    footer { border-top:1px solid var(--line); padding:28px 0; color:var(--muted); font-size:0.95rem; }
+    footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; }
+    footer a { color:var(--muted); margin-left:20px; }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <a href="/" class="brand"><span class="brand-mark"></span>Eldo</a>
+      <a href="/" class="back">Back to home</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <h1>Privacy</h1>
+    <p class="updated">Last updated: November 23, 2026</p>
+    <p class="lede">The short version: this site doesn't track you, doesn't use cookies and has no forms. We only learn about you if you email us, and we never sell your information.</p>
+
+    <h2>Who we are</h2>
+    <p>This site, eldo.network, is run by Eldo Network LLC ("Eldo", "we", "us"), based in Long Beach, California. Questions go to <a href="mailto:joseph@eldo.network">joseph@eldo.network</a>.</p>
+
+    <h2>What we collect</h2>
+    <ul>
+      <li><strong>Emails you send us.</strong> If you write to us, we receive your name, email address and whatever you include. We use it to reply and, if we end up working together, to do that work.</li>
+      <li><strong>Basic technical logs.</strong> Our hosting provider, Cloudflare, handles each visit to deliver the site and protect it from abuse. That involves standard request details such as your IP address, browser type and the page you asked for. We keep short-term logs of these requests for troubleshooting.</li>
+    </ul>
+    <p>We don't use analytics or advertising tools, and the site doesn't set cookies.</p>
+
+    <h2>Other services the site relies on</h2>
+    <ul>
+      <li><strong>Cloudflare</strong> hosts and serves the site. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.</li>
+      <li><strong>Google Fonts</strong> supplies the typefaces, so your browser fetches them from Google, which receives your IP address. See <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
+    </ul>
+
+    <h2>How we use and share it</h2>
+    <p>We use your information only to respond to you, run this site and keep it secure. We don't sell or rent it, and we don't share it for advertising. We'd disclose it only if the law requires us to.</p>
+
+    <h2>How long we keep it</h2>
+    <p>We keep emails for as long as they're useful for the conversation or any work that follows, and request logs only for a short period.</p>
+
+    <h2>Your choices</h2>
+    <p>You can ask to see, correct or delete the information we have about you. Email <a href="mailto:joseph@eldo.network">joseph@eldo.network</a> and we'll take care of it. If you're a California resident, you have these rights under California law too. We don't sell or share personal information as those laws define it.</p>
+
+    <h2>Children</h2>
+    <p>This site is meant for businesses and isn't directed at children under 13.</p>
+
+    <h2>Client data</h2>
+    <p>When we work on a client's systems, that data is handled under our written agreement with the client, not this page.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, we'll update the date at the top of this page.</p>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> Eldo Network LLC</span>
+      <span><a href="/privacy">Privacy</a><a href="/terms">Terms</a></span>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

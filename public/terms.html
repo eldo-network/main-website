@@ -1,1 +1,85 @@
-Coming soon.
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Use · Eldo</title>
+  <meta name="description" content="Terms of use for the Eldo website, eldo.network." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23b08a3e'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#faf8f3; --ink:#1b2a3a; --muted:#4a5663; --line:#e3ddd1; --accent:#2f5d50; --detail:#b08a3e; }
+    *,*::before,*::after { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:18px/1.7 'Public Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+    .wrap { max-width:720px; margin:0 auto; padding:0 24px; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:28px 0; }
+    .brand { display:flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none; font:600 1.2rem 'Newsreader',Georgia,serif; }
+    .brand-mark { width:14px; height:14px; border-radius:3px; background:var(--detail); }
+    nav a.back { color:var(--accent); font-size:1rem; }
+    h1 { font:500 clamp(2.2rem,5vw,3rem)/1.1 'Newsreader',Georgia,serif; margin:32px 0 8px; }
+    h2 { font:500 1.45rem/1.3 'Newsreader',Georgia,serif; margin:40px 0 8px; }
+    p, li { color:var(--ink); }
+    .updated { color:var(--muted); margin:0 0 24px; }
+    .lede { font-size:1.1rem; color:var(--muted); }
+    a { color:var(--accent); }
+    main { padding-bottom:64px; }
+    footer { border-top:1px solid var(--line); padding:28px 0; color:var(--muted); font-size:0.95rem; }
+    footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; }
+    footer a { color:var(--muted); margin-left:20px; }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <a href="/" class="brand"><span class="brand-mark"></span>Eldo</a>
+      <a href="/" class="back">Back to home</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <h1>Terms of Use</h1>
+    <p class="updated">Last updated: November 23, 2026</p>
+    <p class="lede">These terms cover your use of this website, eldo.network. They're short and in plain language. By using the site, you agree to them.</p>
+
+    <h2>Who we are</h2>
+    <p>This site is run by Eldo Network LLC ("Eldo", "we", "us"), based in Long Beach, California. You can reach us at <a href="mailto:joseph@eldo.network">joseph@eldo.network</a>.</p>
+
+    <h2>What this site is for</h2>
+    <p>The site describes what we do and how to get in touch. It's general information, not professional advice, and it isn't an offer or a contract. The examples on the site, including the sample numbers, are illustrations, not results for any real business.</p>
+
+    <h2>Client work is separate</h2>
+    <p>If we work together, that work is covered by a separate written agreement between us. If that agreement and these terms ever disagree, the agreement wins.</p>
+
+    <h2>Our content</h2>
+    <p>The text, design and other material on this site belong to us or the people who licensed them to us. You're welcome to read, share links to and quote small parts of it. Please don't copy, republish or sell it without asking first.</p>
+
+    <h2>Links to other sites</h2>
+    <p>We may link to sites we don't run. We aren't responsible for their content or how they handle your information.</p>
+
+    <h2>No warranties</h2>
+    <p>We work to keep the site accurate and available, but we provide it "as is," without warranties of any kind, express or implied. That includes any warranty that it will be error-free, uninterrupted or fit for a particular purpose.</p>
+
+    <h2>Limitation of liability</h2>
+    <p>To the fullest extent the law allows, we aren't liable for any indirect, incidental, special or consequential damages, or for lost profits or data, arising from your use of this site. Some places don't allow these limits, so they may not all apply to you.</p>
+
+    <h2>Governing law</h2>
+    <p>These terms are governed by the laws of the State of California, without regard to its conflict-of-law rules. Any dispute about this site will be handled in the state or federal courts located in Los Angeles County, California.</p>
+
+    <h2>Changes</h2>
+    <p>We may update these terms from time to time. When we do, we'll change the date at the top of this page. Continuing to use the site after a change means you accept the updated terms.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about these terms? Email <a href="mailto:joseph@eldo.network">joseph@eldo.network</a>.</p>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> Eldo Network LLC</span>
+      <span><a href="/privacy">Privacy</a><a href="/terms">Terms</a></span>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
