@@ -3,748 +3,317 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eldo Network — Data Isn't the Gold. Refined Data Is.</title>
-  <meta name="description" content="Eldo Network turns the messy, scattered data your business already has into refined, reliable information, so dashboards get built, AI projects ship, and your team can actually trust the numbers." />
-  <meta name="keywords" content="data cleansing, data enrichment, data cleaning services, data quality, data consulting, data preparation, data readiness, data reconciliation, dashboard data, business intelligence data, AI data, data for analytics, CRM data cleaning, fixing dirty data, data consolidation, AI-ready data" />
-  <meta name="theme-color" content="#0b0f14" />
-  <meta property="og:title" content="Eldo Network — Data Isn't the Gold. Refined Data Is." />
-  <meta property="og:description" content="We turn the messy, scattered data your business already has into refined, reliable information your team can actually use." />
+  <title>Eldo Network · Modern tools for owner-run businesses</title>
+  <meta name="description" content="Eldo builds modern tools around the software you already have, so the work gets done on its own and you can see your business from your phone." />
+  <meta name="theme-color" content="#faf8f3" />
+  <meta property="og:title" content="Eldo Network · Give your business the tools you've always wanted" />
+  <meta property="og:description" content="Eldo builds modern tools around the software you already have, so the work gets done on its own and you can see your business from your phone." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://eldo.network/" />
-  <meta property="og:image" content="https://eldo.network/og-card.png" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%23e8c547'/><stop offset='100%25' stop-color='%23c9a227'/></linearGradient></defs><rect width='32' height='32' rx='6' fill='url(%23g)'/></svg>" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="Eldo Network, plain-text summary" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23b08a3e'/></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --gold: #f1c453;
-      --gold-deep: #c9a227;
-      --ink: #0b0f14;
-      --ink-2: #0f141b;
+      --bg: #faf8f3; --surface: #ffffff; --band: #f1ede4;
+      --ink: #1b2a3a; --muted: #4a5663; --line: #e3ddd1; --line-strong: #c9c1b2;
+      --accent: #2f5d50; --on-accent: #ffffff; --accent-2: #9a3f22; --detail: #b08a3e;
+      --shadow: 0 1px 2px rgba(27,42,58,.05), 0 8px 24px rgba(27,42,58,.06);
+      --head-font: 'Newsreader', Georgia, serif; --head-weight: 500; --head-tracking: -0.01em;
+      --body-font: 'Public Sans', system-ui, sans-serif;
+      --maxw: 1120px;
     }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
-      font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
-      font-feature-settings: "ss01", "cv11";
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: var(--body-font); font-size: 18px; line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
-    .serif { font-family: 'Instrument Serif', ui-serif, Georgia, serif; font-optical-sizing: auto; }
-    .mono  { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
-    .gold { color: var(--gold); }
-    .highlight { color: #f8f4ee; }
-    .gold-bg { background: linear-gradient(135deg, #e8c547, #c9a227); }
-    .glass { background: rgba(255,255,255,0.035); box-shadow: 0 10px 30px rgba(0,0,0,0.25); backdrop-filter: blur(8px); }
-    .hairline { border-color: rgba(255,255,255,0.08); }
-    .grid-lines {
-      background-image:
-        linear-gradient(rgba(241,196,83,0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(241,196,83,0.045) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
-    .noise::before {
-      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.06;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
-    }
-    .halo {
-      position: absolute; inset: -20% -10% auto auto; height: 620px; width: 620px;
-      background: radial-gradient(closest-side, rgba(241,196,83,0.18), rgba(241,196,83,0) 70%);
-      filter: blur(10px); pointer-events: none;
-    }
-    .rule { height: 1px; background: linear-gradient(90deg, transparent, rgba(241,196,83,0.45), transparent); }
-    .eyebrow {
-      font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: #d1c38a;
-    }
-    .tag {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 4px 10px; border: 1px solid rgba(241,196,83,0.25);
-      border-radius: 999px; font-family: 'IBM Plex Mono', monospace;
-      font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
-      color: #e8d9a3; background: rgba(241,196,83,0.04);
-    }
-    .tag-dot { width: 6px; height: 6px; border-radius: 999px; background: var(--gold); box-shadow: 0 0 0 3px rgba(241,196,83,0.15); }
-    .card {
-      position: relative; padding: 28px; border-radius: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015));
-      border: 1px solid rgba(255,255,255,0.07);
-      transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
-    }
-    .card:hover { transform: translateY(-2px); border-color: rgba(241,196,83,0.35); }
-    .card .num {
-      position: absolute; top: 18px; right: 22px;
-      font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(241,196,83,0.55);
-    }
-    .step-line {
-      position: absolute; left: 19px; top: 40px; bottom: -24px; width: 1px;
-      background: linear-gradient(180deg, rgba(241,196,83,0.4), rgba(241,196,83,0));
-    }
-    .step-dot {
-      width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center;
-      background: rgba(241,196,83,0.08); border: 1px solid rgba(241,196,83,0.35);
-      color: var(--gold); font-family: 'IBM Plex Mono', monospace; font-size: 13px;
-    }
-    .marquee-mask {
-      mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
-      -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
-    }
-    .marquee-track { animation: scroll 42s linear infinite; }
-    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    h1, h2, h3 { font-family: var(--head-font); font-weight: var(--head-weight); color: var(--ink); letter-spacing: var(--head-tracking); margin: 0; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.08; }
+    h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.15; }
+    h3 { font-size: 1.25rem; line-height: 1.3; }
+    p { margin: 0; }
+    a { color: var(--accent); }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    .muted { color: var(--muted); }
+    .label { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+    section { padding: 88px 0; }
+    .rule-top { border-top: 1px solid var(--line); }
 
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-    .reveal { animation: fadeUp 0.9s ease both; }
-    .reveal-1 { animation-delay: 0.05s; }
-    .reveal-2 { animation-delay: 0.15s; }
-    .reveal-3 { animation-delay: 0.25s; }
-    .reveal-4 { animation-delay: 0.35s; }
+    /* Nav */
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 28px 0; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: var(--head-font); font-weight: 600; font-size: 1.2rem; }
+    .brand-mark { width: 14px; height: 14px; border-radius: 3px; background: var(--detail); }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 1rem; }
+    .nav-links a { color: var(--ink); text-decoration: none; }
+    .nav-links a.hide-sm { display: none; }
+    @media (min-width: 760px) { .nav-links a.hide-sm { display: inline; } }
 
-    .schema-row { display: grid; grid-template-columns: 18px 1fr auto; gap: 10px; align-items: center; padding: 7px 0; }
-    .schema-row + .schema-row { border-top: 1px dashed rgba(255,255,255,0.06); }
-    .pill { font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 2px 7px; border-radius: 6px; letter-spacing: 0.05em; }
-    .pill-bad { background: rgba(239, 68, 68, 0.12); color: #fca5a5; border: 1px solid rgba(239,68,68,0.25); }
-    .pill-ok { background: rgba(241,196,83,0.12); color: #f1c453; border: 1px solid rgba(241,196,83,0.3); }
-    .arrow-col { display: flex; align-items: center; justify-content: center; color: rgba(241,196,83,0.55); }
+    .btn { display: inline-block; padding: 14px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem; text-decoration: none; border: 1px solid transparent; cursor: pointer; font-family: inherit; }
+    .btn-primary { background: var(--accent); color: var(--on-accent); }
+    .btn-primary:hover { filter: brightness(1.08); }
+    .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+    .btn-ghost:hover { border-color: var(--ink); }
 
-    .pain-row { display: flex; align-items: start; gap: 14px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.06); }
-    .pain-row:first-child { border-top: 0; }
-    .pain-x {
-      flex-shrink: 0; width: 26px; height: 26px; border-radius: 8px;
-      background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239,68,68,0.2);
-      display: grid; place-items: center; color: #fca5a5; font-family: 'IBM Plex Mono', monospace; font-size: 13px;
-    }
-    select option { background: #151b24; color: #e2e8f0; }
+    /* Hero */
+    .hero { padding: 40px 0 88px; }
+    .hero-grid { display: grid; gap: 48px; align-items: start; }
+    @media (min-width: 960px) { .hero-grid { grid-template-columns: 1.25fr 1fr; gap: 64px; } }
+    .hero .lede { margin-top: 24px; font-size: 1.2rem; color: var(--muted); max-width: 36em; }
+    .hero .actions { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* Morning card */
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; box-shadow: var(--shadow); }
+    .tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 18px; }
+    .tab { font: inherit; font-size: 0.9rem; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; color: var(--ink); cursor: pointer; }
+    .tab[aria-selected="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .card-head h3 { font-size: 1.1rem; }
+    .metric { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); }
+    .metric:first-child { border-top: 0; }
+    .metric span:first-child { color: var(--ink); }
+    .metric strong { font-family: var(--head-font); font-size: 1.6rem; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .metric.flag strong { color: var(--accent-2); }
+    .card-foot { margin-top: 12px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 0.95rem; color: var(--muted); }
+
+    /* Two-column heading + body */
+    .split { display: grid; gap: 32px; }
+    @media (min-width: 900px) { .split { grid-template-columns: 1fr 1.6fr; gap: 64px; } }
+    .split .intro { margin-top: 16px; color: var(--muted); }
+
+    /* Lists with thin rules */
+    .ruled { list-style: none; margin: 0; padding: 0; }
+    .ruled li { padding: 20px 0; border-top: 1px solid var(--line); }
+    .ruled li:first-child { border-top: 0; padding-top: 0; }
+    .ruled h3 { font-family: var(--body-font); font-size: 1.1rem; font-weight: 600; letter-spacing: 0; }
+    .ruled p { margin-top: 4px; color: var(--muted); }
+
+    /* What we build */
+    .build-grid { margin-top: 48px; display: grid; gap: 16px; }
+    @media (min-width: 700px) { .build-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1000px) { .build-grid { grid-template-columns: repeat(3, 1fr); } }
+    .build { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 26px; }
+    .build p { margin-top: 10px; color: var(--muted); }
+    .build.note { background: transparent; border-style: dashed; display: flex; align-items: center; }
+
+    /* Who it's for */
+    .who { background: var(--band); padding: 56px 0; }
+    .who-list { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 10px 12px; }
+    .who-list li { padding: 8px 16px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-weight: 500; }
+    .who .tail { margin-top: 20px; color: var(--muted); }
+
+    /* Bigger */
+    .bigger-points { margin-top: 40px; display: grid; gap: 28px; }
+    @media (min-width: 800px) { .bigger-points { grid-template-columns: repeat(3, 1fr); gap: 40px; } }
+    .bigger-points div { border-top: 2px solid var(--detail); padding-top: 18px; }
+    .bigger-points p { margin-top: 8px; color: var(--muted); }
+
+    /* Steps */
+    .steps { list-style: none; margin: 0; padding: 0; counter-reset: s; }
+    .steps li { position: relative; padding: 0 0 28px 56px; counter-increment: s; }
+    .steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--accent); color: var(--accent); display: grid; place-items: center; font-weight: 600; font-size: 1rem; }
+    .steps li:last-child { padding-bottom: 0; }
+    .steps h3 { font-family: var(--body-font); font-size: 1.1rem; font-weight: 600; letter-spacing: 0; padding-top: 4px; }
+    .steps p { margin-top: 4px; color: var(--muted); }
+    .pull { margin-top: 20px; font-family: var(--head-font); font-size: 1.3rem; line-height: 1.4; color: var(--ink); }
+
+    /* About */
+    .about { max-width: 720px; }
+    .about p { margin-top: 20px; font-size: 1.15rem; }
+    .about .fig { color: var(--accent); font-weight: 600; }
+
+    /* Contact */
+    .contact { background: var(--band); text-align: center; }
+    .contact p { margin-top: 16px; color: var(--muted); font-size: 1.15rem; }
+    .contact .actions { margin-top: 32px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    #copied { margin-top: 12px; font-size: 0.95rem; color: var(--accent); min-height: 1.5em; }
+
+    footer { padding: 32px 0; font-size: 0.95rem; color: var(--muted); }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    footer a { color: var(--muted); margin-left: 20px; }
+
   </style>
 </head>
-<body class="min-h-screen bg-[#0b0f14] text-slate-200 selection:bg-yellow-200 selection:text-black antialiased">
+<body>
 
-  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
-  <header class="relative overflow-hidden noise">
-    <div class="absolute inset-0 grid-lines opacity-70"></div>
-    <div class="halo"></div>
-
-    <div class="relative max-w-6xl mx-auto px-6 pt-10 pb-4">
-      <nav class="flex items-center justify-between reveal">
-        <a href="/" class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl gold-bg"></div>
-          <span class="tracking-wider font-medium">Eldo <span class="gold">Network</span></span>
-        </a>
-        <div class="hidden md:flex items-center gap-8 text-sm text-slate-300">
-          <a href="#problem" class="hover:text-white transition">The Problem</a>
-          <a href="#services" class="hover:text-white transition">What We Do</a>
-          <a href="#process" class="hover:text-white transition">How It Works</a>
-          <a href="#contact" class="px-4 py-2 rounded-lg border hairline hover:border-yellow-300/60 transition">Get started</a>
-        </div>
-      </nav>
-    </div>
-
-    <div class="relative max-w-6xl mx-auto px-6 pt-14 pb-24">
-      <div class="grid lg:grid-cols-12 gap-12 items-start">
-        <div class="lg:col-span-7">
-          <div class="flex items-center gap-3 reveal reveal-1">
-            <span class="tag"><span class="tag-dot"></span>The Data Readiness Layer</span>
-          </div>
-
-          <h1 class="mt-6 text-5xl md:text-7xl font-semibold leading-[1.02] tracking-tight reveal reveal-2">
-            Data isn't the gold. <span class="serif italic highlight">Refined</span> data is.
-          </h1>
-
-          <p class="mt-7 text-lg text-slate-300 max-w-2xl leading-relaxed reveal reveal-3">
-            Every business is sitting on a goldmine of data, spread across CRMs, spreadsheets, billing systems, and apps that don't agree with each other. Eldo Network cleans it up, reconciles it, and hands it back ready to power your dashboards, AI tools, and day-to-day decisions. No more numbers that don't match. No more stalled projects.
-          </p>
-
-          <div class="mt-10 flex flex-wrap items-center gap-4 reveal reveal-4">
-            <a href="#contact" class="px-6 py-3 rounded-xl bg-white text-black font-medium hover:bg-yellow-50 transition">
-              Get started →
-            </a>
-            <a href="#problem" class="px-6 py-3 rounded-xl border hairline text-slate-200 hover:border-yellow-300/60 transition">
-              Does this sound familiar?
-            </a>
-            <div class="hidden sm:flex items-center gap-2 text-xs text-slate-400 mono ml-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              Accepting new engagements
-            </div>
-          </div>
-        </div>
-
-        <!-- Visual: before/after -->
-        <div class="lg:col-span-5 reveal reveal-3">
-          <div class="glass rounded-2xl p-6 border hairline">
-            <div class="flex items-center justify-between mb-4">
-              <div class="eyebrow">your customer list</div>
-              <div class="flex gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-400/70"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400/70"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/70"></span>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-[1fr_20px_1fr] gap-3">
-              <div>
-                <div class="mono text-[10px] text-slate-500 uppercase tracking-widest mb-2">Before</div>
-                <div class="schema-row"><span class="text-slate-500 mono text-xs">01</span><span class="text-slate-300 text-sm truncate">jane doe ,</span><span class="pill pill-bad">blank</span></div>
-                <div class="schema-row"><span class="text-slate-500 mono text-xs">02</span><span class="text-slate-300 text-sm truncate">JDoe@GMAIL</span><span class="pill pill-bad">broken</span></div>
-                <div class="schema-row"><span class="text-slate-500 mono text-xs">03</span><span class="text-slate-300 text-sm truncate">(415) 555</span><span class="pill pill-bad">partial</span></div>
-                <div class="schema-row"><span class="text-slate-500 mono text-xs">04</span><span class="text-slate-300 text-sm truncate">SF, ca</span><span class="pill pill-bad">messy</span></div>
-                <div class="schema-row"><span class="text-slate-500 mono text-xs">05</span><span class="text-slate-300 text-sm truncate">—</span><span class="pill pill-bad">missing</span></div>
-              </div>
-
-              <div class="arrow-col">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </div>
-
-              <div>
-                <div class="mono text-[10px] gold uppercase tracking-widest mb-2">After</div>
-                <div class="schema-row"><span class="text-slate-500 mono text-xs">01</span><span class="text-slate-100 text-sm truncate">Jane Doe</span><span class="pill pill-ok">✓</span></div>
-                <div class="schema-row"><span class="text-slate-500 mono text-xs">02</span><span class="text-slate-100 text-sm truncate">jdoe@gmail.com</span><span class="pill pill-ok">valid</span></div>
-                <div class="schema-row"><span class="text-slate-500 mono text-xs">03</span><span class="text-slate-100 text-sm truncate">+1-415-555-0134</span><span class="pill pill-ok">fixed</span></div>
-                <div class="schema-row"><span class="text-slate-500 mono text-xs">04</span><span class="text-slate-100 text-sm truncate">San Francisco, CA</span><span class="pill pill-ok">geo</span></div>
-                <div class="schema-row"><span class="text-slate-500 mono text-xs">05</span><span class="text-slate-100 text-sm truncate">Tier 1 customer</span><span class="pill pill-ok">added</span></div>
-              </div>
-            </div>
-
-            <div class="rule mt-5 mb-4"></div>
-            <div class="flex items-center justify-between text-xs mono text-slate-400">
-              <span>usable records</span>
-              <span class="gold">42% → 98%</span>
-            </div>
-          </div>
-        </div>
+  <header class="wrap">
+    <nav>
+      <a href="/" class="brand"><span class="brand-mark"></span>Eldo Network</a>
+      <div class="nav-links">
+        <a href="#build" class="hide-sm">What we build</a>
+        <a href="#how" class="hide-sm">How it starts</a>
+        <a href="#about" class="hide-sm">About</a>
+        <a href="#contact" class="btn btn-ghost" style="padding:10px 18px">Let's talk</a>
       </div>
-    </div>
-
-    <!-- Keyword strip -->
-    <div class="relative border-y hairline bg-black/20">
-      <div class="max-w-6xl mx-auto px-6 py-5 flex items-center gap-6 text-xs mono text-slate-500 marquee-mask overflow-hidden">
-        <div class="flex gap-10 whitespace-nowrap marquee-track">
-          <span>DATA CLEANSING</span><span class="gold">◆</span>
-          <span>DATA ENRICHMENT</span><span class="gold">◆</span>
-          <span>DASHBOARD-READY DATA</span><span class="gold">◆</span>
-          <span>AI-READY DATA</span><span class="gold">◆</span>
-          <span>CRM &amp; SYSTEM CONSOLIDATION</span><span class="gold">◆</span>
-          <span>REPORTING &amp; ANALYTICS</span><span class="gold">◆</span>
-          <span>DATA QUALITY &amp; GOVERNANCE</span><span class="gold">◆</span>
-          <span>GEOSPATIAL &amp; GIS</span><span class="gold">◆</span>
-          <span>DATA CLEANSING</span><span class="gold">◆</span>
-          <span>DATA ENRICHMENT</span><span class="gold">◆</span>
-          <span>DASHBOARD-READY DATA</span><span class="gold">◆</span>
-          <span>AI-READY DATA</span><span class="gold">◆</span>
-          <span>CRM &amp; SYSTEM CONSOLIDATION</span><span class="gold">◆</span>
-          <span>REPORTING &amp; ANALYTICS</span><span class="gold">◆</span>
-          <span>DATA QUALITY &amp; GOVERNANCE</span><span class="gold">◆</span>
-          <span>GEOSPATIAL &amp; GIS</span><span class="gold">◆</span>
-        </div>
-      </div>
-    </div>
+    </nav>
   </header>
 
-  <!-- ═══════════════════════════ PROBLEM ═══════════════════════════ -->
-  <section id="problem" class="max-w-6xl mx-auto px-6 py-24">
-    <div class="grid md:grid-cols-12 gap-10 items-start">
-      <div class="md:col-span-5">
-        <div class="eyebrow">01 · The Problem</div>
-        <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">Sound <span class="italic highlight">familiar?</span></h2>
-        <p class="mt-5 text-slate-400 leading-relaxed">Most businesses don't have a data problem. They have a <em>data readiness</em> problem. The information is all there. It's just not in a shape anyone can use yet.</p>
-      </div>
-      <div class="md:col-span-7">
-        <div class="glass rounded-2xl p-2 border hairline">
-          <div class="p-5">
-            <div class="pain-row">
-              <div class="pain-x">!</div>
-              <div>
-                <h4 class="font-medium text-slate-100">Your dashboard numbers don't match.</h4>
-                <p class="mt-1 text-sm text-slate-400">Revenue in the CRM says one thing. The accounting system says another. Nobody trusts the report.</p>
-              </div>
-            </div>
-            <div class="pain-row">
-              <div class="pain-x">!</div>
-              <div>
-                <h4 class="font-medium text-slate-100">Beautiful dashboards that never ship.</h4>
-                <p class="mt-1 text-sm text-slate-400">Marketing mocked them up. Everyone loved the demo. Then the data got involved and the project stalled.</p>
-              </div>
-            </div>
-            <div class="pain-row">
-              <div class="pain-x">!</div>
-              <div>
-                <h4 class="font-medium text-slate-100">Your tech lead keeps asking for "more time."</h4>
-                <p class="mt-1 text-sm text-slate-400">They're not stalling. They're hand-cleaning data from five systems every time you ask a question.</p>
-              </div>
-            </div>
-            <div class="pain-row">
-              <div class="pain-x">!</div>
-              <div>
-                <h4 class="font-medium text-slate-100">Your AI pilot isn't living up to the hype.</h4>
-                <p class="mt-1 text-sm text-slate-400">The tool is fine. The data you're feeding it is the problem. Garbage in, garbage out, at scale.</p>
-              </div>
-            </div>
-            <div class="pain-row">
-              <div class="pain-x">!</div>
-              <div>
-                <h4 class="font-medium text-slate-100">Duplicate customers. Missing fields. Stale records.</h4>
-                <p class="mt-1 text-sm text-slate-400">Your CRM is a graveyard of half-complete entries. Sales and marketing can't trust what they see.</p>
-              </div>
-            </div>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="label">Modern tools for owner-run businesses</p>
+          <h1 style="margin-top:16px">Give your business the tools you've always wanted.</h1>
+          <p class="lede">Most businesses run on good people, a few spreadsheets and software that was old when they bought it. Eldo builds modern tools around what you already have, so the routine work gets done on its own and you can see how the business is doing from your phone.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:joseph@eldo.network?subject=Let%27s%20talk">Start a conversation</a>
+            <a class="btn btn-ghost" href="#how">See how it starts</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════════════════ THESIS ═══════════════════════════ -->
-  <section class="max-w-6xl mx-auto px-6 py-20">
-    <div class="grid md:grid-cols-12 gap-10 items-center">
-      <div class="md:col-span-5">
-        <div class="eyebrow">02 · What we do</div>
-        <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">We fix the layer <span class="italic highlight">underneath</span> every project you can't get off the ground.</h2>
-      </div>
-      <div class="md:col-span-7">
-        <p class="text-lg text-slate-300 leading-relaxed">
-          Every dashboard, AI tool, automation, and report your team wants to build depends on the same thing: clean, connected, trustworthy data. That's the layer we own.
-        </p>
-        <p class="mt-5 text-lg text-slate-300 leading-relaxed">
-          We pull your data out of wherever it's hiding (CRMs, spreadsheets, databases, third-party apps), clean it up, fill in what's missing, reconcile it into one trusted source, and hand it back in a form your people and your tools can actually use. The boring, essential work that turns a data mess into a business asset.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ SERVICES ═══════════════════════════ -->
-  <section id="services" class="relative max-w-6xl mx-auto px-6 py-20">
-    <div class="flex items-end justify-between flex-wrap gap-4">
-      <div>
-        <div class="eyebrow">03 · Services</div>
-        <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">What that looks like in practice.</h2>
-      </div>
-      <p class="text-slate-400 text-sm max-w-sm">From one-time cleanup projects to ongoing data quality programs, scoped to what your business actually needs.</p>
-    </div>
-
-    <div class="mt-14 grid md:grid-cols-3 gap-5">
-      <div class="card">
-        <div class="num">/ 01</div>
-        <div class="w-10 h-10 rounded-lg gold-bg mb-5 grid place-items-center">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b0f14" stroke-width="2"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
+        <div class="card" aria-live="polite">
+          <div class="card-head">
+            <h3>This morning</h3>
+            <span class="muted" style="font-size:0.9rem">updated 7:02 am</span>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Example business">
+            <button class="tab" role="tab" data-k="property" aria-selected="true">Property</button>
+            <button class="tab" role="tab" data-k="clinic" aria-selected="false">Clinic</button>
+            <button class="tab" role="tab" data-k="distribution" aria-selected="false">Distribution</button>
+            <button class="tab" role="tab" data-k="services" aria-selected="false">Services</button>
+          </div>
+          <div id="metrics"></div>
+          <p class="card-foot">An example. Pulled from the systems you already use. Nobody typed it in.</p>
         </div>
-        <h3 class="serif text-2xl font-medium">Clean it up</h3>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
-          Deduplicate customers. Fix broken emails and phone numbers. Standardize messy address fields. Flag and repair the records that are silently breaking your reports.
-        </p>
-        <p class="mt-4 text-xs mono text-slate-500 tracking-wider">DATA CLEANSING · DEDUPLICATION · VALIDATION</p>
       </div>
+    </section>
 
-      <div class="card">
-        <div class="num">/ 02</div>
-        <div class="w-10 h-10 rounded-lg gold-bg mb-5 grid place-items-center">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b0f14" stroke-width="2"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg>
-        </div>
-        <h3 class="serif text-2xl font-medium">Fill in the gaps</h3>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
-          Your records are half-empty. We fill them in with company size, location, industry, customer tier, whatever the business needs to segment, target, and report accurately.
-        </p>
-        <p class="mt-4 text-xs mono text-slate-500 tracking-wider">DATA ENRICHMENT · AUGMENTATION · SEGMENTATION</p>
-      </div>
-
-      <div class="card">
-        <div class="num">/ 03</div>
-        <div class="w-10 h-10 rounded-lg gold-bg mb-5 grid place-items-center">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b0f14" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
-        </div>
-        <h3 class="serif text-2xl font-medium">Make the numbers match</h3>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
-          Your data lives in five places and none of them agree. Send us exports from each and we reconcile them into one clean dataset where the CRM, the billing system, and the spreadsheet all tell the same story.
-        </p>
-        <p class="mt-4 text-xs mono text-slate-500 tracking-wider">DATA RECONCILIATION · CONSOLIDATION · SINGLE SOURCE OF TRUTH</p>
-      </div>
-
-      <div class="card">
-        <div class="num">/ 04</div>
-        <div class="w-10 h-10 rounded-lg gold-bg mb-5 grid place-items-center">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b0f14" stroke-width="2"><path d="M3 3v18h18M7 14l4-4 4 4 5-5"/></svg>
-        </div>
-        <h3 class="serif text-2xl font-medium">Make it dashboard-ready</h3>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
-          Your BI tool is only as good as what you feed it. We prepare the data so your dashboards show real numbers, update reliably, and stop embarrassing you in meetings.
-        </p>
-        <p class="mt-4 text-xs mono text-slate-500 tracking-wider">REPORTING · ANALYTICS · BUSINESS INTELLIGENCE</p>
-      </div>
-
-      <div class="card">
-        <div class="num">/ 05</div>
-        <div class="w-10 h-10 rounded-lg gold-bg mb-5 grid place-items-center">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b0f14" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg>
-        </div>
-        <h3 class="serif text-2xl font-medium">Make it AI-ready</h3>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
-          Thinking about an internal AI assistant, a chatbot, or smarter search? Those projects live or die on the quality of the data behind them. We make sure yours is ready.
-        </p>
-        <p class="mt-4 text-xs mono text-slate-500 tracking-wider">AI DATA PREPARATION · TRAINING DATA · RAG-READY</p>
-      </div>
-
-      <div class="card">
-        <div class="num">/ 06</div>
-        <div class="w-10 h-10 rounded-lg gold-bg mb-5 grid place-items-center">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b0f14" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM2 12h20"/></svg>
-        </div>
-        <h3 class="serif text-2xl font-medium">Keep it clean over time</h3>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
-          A one-time cleanup is only as good as the day it ships. We can set up the systems to keep your data clean as new records come in, so you never have to do this twice.
-        </p>
-        <p class="mt-4 text-xs mono text-slate-500 tracking-wider">DATA QUALITY · GOVERNANCE · AUTOMATION</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ WHO FOR ═══════════════════════════ -->
-  <section class="relative overflow-hidden py-24">
-    <div class="absolute inset-0 grid-lines opacity-30"></div>
-    <div class="relative max-w-6xl mx-auto px-6">
-      <div class="flex items-end justify-between flex-wrap gap-4 mb-14">
+    <!-- SOUND FAMILIAR -->
+    <section class="rule-top">
+      <div class="wrap split">
         <div>
-          <div class="eyebrow">04 · Who we work with</div>
-          <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">Built for leaders who can <span class="italic highlight">see the potential</span> their data is hiding.</h2>
+          <h2>Sound familiar?</h2>
+          <p class="intro">Your business works. It just takes more hands than it should, and you only see the full picture when someone runs a report.</p>
+        </div>
+        <ul class="ruled">
+          <li><h3>"We type the same thing into three places."</h3><p>Invoices, orders, appointments and forms copied by hand from one system to the next.</p></li>
+          <li><h3>"I have to be at my desk to know what's going on."</h3><p>The numbers you care about live in reports someone has to run.</p></li>
+          <li><h3>"Our software is older than some of our staff."</h3><p>It works, so nobody wants to replace it, but nobody loves it either.</p></li>
+          <li><h3>"We find out about problems after they cost us."</h3><p>A late payment, a lapsed policy or an expired contract turns up weeks too late.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WHAT WE BUILD -->
+    <section id="build" class="rule-top">
+      <div class="wrap">
+        <h2>What we build.</h2>
+        <p class="muted" style="margin-top:16px;max-width:38em">We keep what works and build around it. When something has to go, we replace it without stopping the business.</p>
+        <div class="build-grid">
+          <div class="build"><h3>A dashboard you check over coffee.</h3><p>The handful of numbers that tell you how the business is doing, up to date every morning, on your phone.</p></div>
+          <div class="build"><h3>The report that builds itself.</h3><p>The weekly or month-end report someone spends a day pulling together, ready before anyone asks.</p></div>
+          <div class="build"><h3>Your systems, finally talking to each other.</h3><p>Accounting, scheduling, inventory and spreadsheets stop disagreeing, and nobody retypes between them.</p></div>
+          <div class="build"><h3>A simple app for the thing you track in a spreadsheet.</h3><p>Built around how your team actually works, with the right people seeing the right things.</p></div>
+          <div class="build"><h3>Moving off old software without stopping work.</h3><p>When it's time to replace a system, we move you over in steps while the business keeps running.</p></div>
+          <div class="build note"><p style="margin:0">Not sure which of these you need? That's what the first conversation is for.</p></div>
         </div>
       </div>
+    </section>
 
-      <div class="grid md:grid-cols-2 gap-5">
-        <article class="card">
-          <h3 class="serif text-2xl font-medium">The operator who knows what needs to happen</h3>
-          <p class="mt-3 text-sm text-slate-300 leading-relaxed">You've already had the conversations. You know you need better reporting, a real dashboard suite, maybe an internal AI tool. You also know, in your gut, that the data isn't ready for any of it. You're looking for someone to handle that layer so your team can actually build on top of it.</p>
-        </article>
-        <article class="card">
-          <h3 class="serif text-2xl font-medium">The leader watching projects stall</h3>
-          <p class="mt-3 text-sm text-slate-300 leading-relaxed">Your marketing team produced gorgeous dashboard mockups. Engineering promised a reporting tool last quarter. Nothing shipped. The common thread is always the same: the data wasn't usable, and nobody on the inside had the time or specialization to fix it.</p>
-        </article>
-        <article class="card">
-          <h3 class="serif text-2xl font-medium">The exec tired of engineer firefighting</h3>
-          <p class="mt-3 text-sm text-slate-300 leading-relaxed">Your engineering team is expensive and talented. They shouldn't be spending half their week hand-cleaning exports so someone else can answer a basic question. We free them up by solving the data layer once, properly.</p>
-        </article>
-        <article class="card">
-          <h3 class="serif text-2xl font-medium">The team planning an AI rollout</h3>
-          <p class="mt-3 text-sm text-slate-300 leading-relaxed">You've seen what AI can do. You want an internal assistant, smarter search, or automation that actually works. The truth most vendors won't tell you: the AI is the easy part. Preparing your data for it is the real work, and it's what we do.</p>
-        </article>
+    <!-- WHO IT'S FOR -->
+    <section class="who">
+      <div class="wrap">
+        <p class="label">Who we work with</p>
+        <ul class="who-list">
+          <li>Property and family offices</li>
+          <li>Health practices and clinics</li>
+          <li>Distribution and the trades</li>
+          <li>Professional services</li>
+        </ul>
+        <p class="tail">And most businesses that run on more software than they'd like.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════ WHERE WE'VE WORKED ═══════════════════════════ -->
-  <section id="work" class="max-w-6xl mx-auto px-6 py-24">
-    <div class="flex items-end justify-between flex-wrap gap-4">
-      <div>
-        <div class="eyebrow">05 · Where we've worked</div>
-        <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">Fortune 500 to city hall.</h2>
-        <p class="mt-4 text-slate-400 max-w-xl">The data layer looks different in every industry, but the core problem is always the same. Here's where we've solved it.</p>
+    <!-- WHEN IT'S BIGGER -->
+    <section>
+      <div class="wrap">
+        <div style="max-width:46em">
+          <h2>When it's bigger than a dashboard.</h2>
+          <p class="muted" style="margin-top:20px;font-size:1.15rem">Some problems are. Moving off a system the whole business depends on. Keeping patient, tenant or client records locked down. Information spread across locations, vendors and clouds. I've done that work for city governments and a large enterprise, where security and scale weren't optional.</p>
+        </div>
+        <div class="bigger-points">
+          <div><h3>Your records stay protected.</h3><p>Sensitive information is locked down, and you decide who can see what.</p></div>
+          <div><h3>Nothing breaks when you grow.</h3><p>A second location or twice the volume doesn't mean starting over.</p></div>
+          <div><h3>You hold the keys.</h3><p>Everything runs in accounts you own, and your data stays yours.</p></div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <article class="card">
-        <div class="eyebrow text-slate-500">Fortune 500</div>
-        <h3 class="serif text-xl mt-3 font-medium">Enterprise data operations</h3>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">Reusable cleanup and enrichment frameworks powering data-engineering programs at Fortune 500 scale.</p>
-      </article>
-      <article class="card">
-        <div class="eyebrow text-slate-500">Cities · Utilities</div>
-        <h3 class="serif text-xl mt-3 font-medium">Public sector & infrastructure</h3>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">Cleaning, enriching, and mapping spatial and asset data for municipalities and utility companies.</p>
-      </article>
-      <article class="card">
-        <div class="eyebrow text-slate-500">Fintech · Startups</div>
-        <h3 class="serif text-xl mt-3 font-medium">Growth-stage data layers</h3>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">Preparing the data that powers personalization, reporting, and AI-driven features for startups and fintech platforms.</p>
-      </article>
-      <article class="card">
-        <div class="eyebrow text-slate-500">Cybersecurity</div>
-        <h3 class="serif text-xl mt-3 font-medium">Metrics & telemetry</h3>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">Turning noisy, fragmented security data into clean inputs analysts and automated systems can actually use.</p>
-      </article>
-      <article class="card">
-        <div class="eyebrow text-slate-500">AI &amp; ML teams</div>
-        <h3 class="serif text-xl mt-3 font-medium">Training & evaluation data</h3>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">Curated datasets for machine learning and AI projects, including synthetic data when real data is too sparse or sensitive.</p>
-      </article>
-      <article class="card">
-        <div class="eyebrow text-slate-500">Cloud-native orgs</div>
-        <h3 class="serif text-xl mt-3 font-medium">Infrastructure that keeps up</h3>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">Across Google Cloud, AWS, and Azure, standing up the systems to keep data clean as the business grows.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ PROCESS ═══════════════════════════ -->
-  <section id="process" class="max-w-6xl mx-auto px-6 py-24">
-    <div class="grid md:grid-cols-12 gap-10">
-      <div class="md:col-span-4">
-        <div class="eyebrow">06 · How it works</div>
-        <h2 class="serif mt-3 text-4xl md:text-5xl font-medium leading-tight">Straightforward from <span class="italic highlight">first call</span> to delivery.</h2>
-        <p class="mt-5 text-slate-400 text-sm max-w-sm">No long discovery slog. We move fast, keep you in the loop, and hand off something your team can actually use.</p>
-      </div>
-
-      <div class="md:col-span-8">
-        <ol class="space-y-6">
-          <li class="relative flex gap-5 pb-6">
-            <div class="step-line"></div>
-            <div class="step-dot">01</div>
-            <div>
-              <h4 class="font-medium text-slate-100">Tell us what's broken.</h4>
-              <p class="mt-1 text-sm text-slate-400 max-w-xl">Share the situation, the systems involved, and what you're trying to build on top. No jargon needed.</p>
-            </div>
-          </li>
-          <li class="relative flex gap-5 pb-6">
-            <div class="step-line"></div>
-            <div class="step-dot">02</div>
-            <div>
-              <h4 class="font-medium text-slate-100">We look at the data.</h4>
-              <p class="mt-1 text-sm text-slate-400 max-w-xl">We dig into a sample to see what we're actually dealing with, and come back with a plain-English scope, timeline, and price.</p>
-            </div>
-          </li>
-          <li class="relative flex gap-5 pb-6">
-            <div class="step-line"></div>
-            <div class="step-dot">03</div>
-            <div>
-              <h4 class="font-medium text-slate-100">We do the work.</h4>
-              <p class="mt-1 text-sm text-slate-400 max-w-xl">Cleaning, reconciling, filling in the gaps, with regular check-ins so you're never wondering what's happening.</p>
-            </div>
-          </li>
-          <li class="relative flex gap-5 pb-6">
-            <div class="step-line"></div>
-            <div class="step-dot">04</div>
-            <div>
-              <h4 class="font-medium text-slate-100">We prove it's right.</h4>
-              <p class="mt-1 text-sm text-slate-400 max-w-xl">Before handoff, we validate the output against your business rules. No ambiguity, no "we think it's clean."</p>
-            </div>
-          </li>
-          <li class="relative flex gap-5">
-            <div class="step-dot">05</div>
-            <div>
-              <h4 class="font-medium text-slate-100">You build what you've been trying to build.</h4>
-              <p class="mt-1 text-sm text-slate-400 max-w-xl">Dashboards ship. AI tools work. Reports match. Your team moves forward instead of fighting the data.</p>
-            </div>
-          </li>
+    <!-- HOW IT STARTS -->
+    <section id="how" class="rule-top">
+      <div class="wrap split">
+        <div>
+          <h2>How it starts.</h2>
+          <p class="pull">Small, on your own data, in your own environment. We only go bigger if the first piece proves itself.</p>
+        </div>
+        <ol class="steps">
+          <li><h3>A conversation.</h3><p>What does your office do by hand, and what does it cost you? 30 minutes, no pitch deck.</p></li>
+          <li><h3>A first look at your own numbers, on us.</h3><p>A personal view built on the system you already have, in your own environment. No charge, so you can see what it's like before deciding anything.</p></li>
+          <li><h3>A project, only if the first piece earns it.</h3><p>Scoped to the result you want and priced up front.</p></li>
+          <li><h3>Ongoing care, if you want it.</h3><p>We keep it running and make small changes as you go.</p></li>
         </ol>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════ SCOPE / QUOTE ═══════════════════════════ -->
-  <section id="contact" class="relative overflow-hidden">
-    <div class="absolute inset-0 grid-lines opacity-40"></div>
-    <div class="halo" style="inset: auto auto -30% -10%;"></div>
-
-    <div class="relative max-w-3xl mx-auto px-6 py-28">
-      <div class="text-center">
-        <div class="eyebrow">07 · Get started</div>
-        <h2 class="serif mt-4 text-4xl md:text-6xl font-medium leading-[1.05]">
-          Scope your project in <span class="italic highlight">60 seconds</span>.
-        </h2>
-        <p class="mt-5 text-slate-400 max-w-xl mx-auto">Answer a few quick questions and we'll give you an instant estimate. No calls, no commitment.</p>
-      </div>
-
-      <!-- Quote form -->
-      <form id="quote-form" class="mt-14 space-y-5">
-        <div class="grid md:grid-cols-2 gap-5">
-          <div>
-            <label class="eyebrow block mb-2">Industry</label>
-            <select name="industry" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm appearance-none cursor-pointer focus:outline-none focus:border-yellow-300/50 transition">
-              <option value="" disabled selected>Select your industry</option>
-              <option value="ecommerce">E-commerce / Retail</option>
-              <option value="restaurant">Restaurant / Hospitality</option>
-              <option value="realestate">Real Estate</option>
-              <option value="engineering">Engineering / Construction</option>
-              <option value="manufacturing">Manufacturing</option>
-              <option value="finance">Finance / Fintech</option>
-              <option value="legal">Legal</option>
-              <option value="healthcare">Healthcare</option>
-              <option value="other">Other / Not listed</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="eyebrow block mb-2">How much data?</label>
-            <select name="gb_size" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm appearance-none cursor-pointer focus:outline-none focus:border-yellow-300/50 transition">
-              <option value="" disabled selected>Estimate the size</option>
-              <option value="0.5">A few spreadsheets</option>
-              <option value="5">Small database (1–10 GB)</option>
-              <option value="30">Medium dataset (10–50 GB)</option>
-              <option value="75">Large dataset (50–100 GB)</option>
-              <option value="150">Enterprise scale (100+ GB)</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="eyebrow block mb-2">How many sources?</label>
-            <select name="source_count" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm appearance-none cursor-pointer focus:outline-none focus:border-yellow-300/50 transition">
-              <option value="" disabled selected>Systems involved</option>
-              <option value="1">Just one system</option>
-              <option value="2">2–3 systems</option>
-              <option value="4">4–5 systems</option>
-              <option value="6">6 or more</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="eyebrow block mb-2">Contains sensitive data?</label>
-            <select name="has_pii" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm appearance-none cursor-pointer focus:outline-none focus:border-yellow-300/50 transition">
-              <option value="" disabled selected>PII, PHI, financial, etc.</option>
-              <option value="no">No</option>
-              <option value="yes">Yes</option>
-              <option value="unsure">Not sure</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label class="eyebrow block mb-3">What do you need?</label>
-          <div class="grid sm:grid-cols-2 gap-3">
-            <label class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-yellow-300/30 transition text-sm text-slate-300">
-              <input type="checkbox" name="needs_dedup" class="accent-yellow-400 w-4 h-4" />
-              Remove duplicates
-            </label>
-            <label class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-yellow-300/30 transition text-sm text-slate-300">
-              <input type="checkbox" name="needs_entity_resolution" class="accent-yellow-400 w-4 h-4" />
-              Match &amp; merge records across sources
-            </label>
-            <label class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-yellow-300/30 transition text-sm text-slate-300">
-              <input type="checkbox" name="needs_llm_enrichment" class="accent-yellow-400 w-4 h-4" />
-              AI-powered enrichment
-            </label>
-            <label class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-yellow-300/30 transition text-sm text-slate-300">
-              <input type="checkbox" name="needs_schema_redesign" class="accent-yellow-400 w-4 h-4" />
-              Restructure / redesign schema
-            </label>
-            <label class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-yellow-300/30 transition text-sm text-slate-300">
-              <input type="checkbox" name="unstructured" class="accent-yellow-400 w-4 h-4" />
-              Unstructured data (docs, PDFs, emails)
-            </label>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-5">
-          <div>
-            <label class="eyebrow block mb-2">Timeline</label>
-            <select name="expedited" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm appearance-none cursor-pointer focus:outline-none focus:border-yellow-300/50 transition">
-              <option value="false">Standard</option>
-              <option value="true">Expedited (+30%)</option>
-            </select>
-          </div>
-          <div>
-            <label class="eyebrow block mb-2">Your email</label>
-            <input type="email" name="email" required placeholder="you@company.com" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm placeholder-slate-500 focus:outline-none focus:border-yellow-300/50 transition" />
-          </div>
-        </div>
-
-        <div class="pt-4">
-          <button type="submit" id="quote-btn" class="w-full px-8 py-4 rounded-xl bg-white text-black font-medium text-lg hover:bg-yellow-50 transition cursor-pointer">
-            Get your estimate →
-          </button>
-        </div>
-      </form>
-
-      <!-- Quote result -->
-      <div id="quote-result" class="hidden mt-10">
-        <div class="glass rounded-2xl p-8 border hairline text-center">
-          <div class="eyebrow mb-2">Your estimate</div>
-          <div class="serif text-5xl md:text-6xl font-medium gold" id="quote-price"></div>
-          <div class="mt-4 flex items-center justify-center gap-6 text-sm text-slate-300">
-            <div class="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="gold"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              <span>Usually delivered in <strong id="quote-days" class="text-white"></strong></span>
-            </div>
-          </div>
-          <div id="quote-review" class="hidden mt-4 text-sm text-yellow-300/80 mono">
-            ⚠ Complex scope — we'll follow up with a custom proposal
-          </div>
-          <div class="rule mt-6 mb-6"></div>
-          <p class="text-sm text-slate-400">We'll send a detailed scope to <strong id="quote-email" class="text-slate-200"></strong> shortly.</p>
-          <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button onclick="copyEmail()" class="group inline-flex items-center gap-2 px-6 py-3 rounded-xl border hairline text-slate-200 hover:border-yellow-300/60 transition cursor-pointer">
-              <span>joseph@eldo.network</span>
-              <svg class="opacity-50 group-hover:opacity-100 transition" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
-            </button>
-            <button onclick="resetForm()" class="px-6 py-3 rounded-xl text-sm text-slate-400 hover:text-white transition cursor-pointer">
-              ← Adjust scope
-            </button>
-          </div>
-          <div id="copy-status-footer" class="mt-2 text-sm gold opacity-0 transition-opacity mono">→ copied to clipboard</div>
+    <!-- ABOUT -->
+    <section id="about" class="rule-top">
+      <div class="wrap">
+        <div class="about">
+          <h2>Who's behind it.</h2>
+          <p>I'm Joseph Schwartz. I've spent twelve years building the systems behind the scenes, for city governments, a startup I co-founded, and a large enterprise. At that enterprise, in about two months, the work took an operation from about <span class="fig">a million dollars a quarter</span> to about <span class="fig">fifty thousand</span>.</p>
+          <p>Now I bring the same work to owner-run businesses, without the big-company price or the big-company risk.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="max-w-6xl mx-auto px-6 py-10 text-sm text-slate-500 border-t hairline">
-    <div class="flex items-center justify-between flex-wrap gap-4">
-      <div class="flex items-center gap-3">
-        <div class="w-6 h-6 rounded-md gold-bg"></div>
-        <span>© <span id="year"></span> Eldo Network · eldo.network</span>
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Tell me what your office does by hand.</h2>
+        <p>30 minutes. If I can't help, I'll tell you.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:joseph@eldo.network?subject=Let%27s%20talk">Email me</a>
+          <button class="btn btn-ghost" onclick="copyEmail()">joseph@eldo.network</button>
+        </div>
+        <div id="copied" aria-live="polite"></div>
       </div>
-      <div class="flex gap-6 mono text-xs">
-        <a class="hover:text-white transition" href="/privacy.html">Privacy</a>
-        <a class="hover:text-white transition" href="/terms.html">Terms</a>
-      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> Eldo Network</span>
+      <span><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></span>
     </div>
   </footer>
 
   <script>
+    const DATA = {
+      property: [["Rent collected this month","94%"],["Payments late","3",1],["Leases up in the next 60 days","5"],["Tenant insurance lapsed","2",1]],
+      clinic: [["Appointments today","38"],["No-shows this week","6",1],["Refills and reorders due","14"],["Unpaid claims over 30 days","$18,400",1]],
+      distribution: [["Orders shipped yesterday","112"],["Invoices past due","9",1],["Items running low","7",1],["Jobs scheduled this week","23"]],
+      services: [["Hours billed this week","312"],["Unpaid invoices","$42,750",1],["Projects over budget","2",1],["Proposals awaiting a reply","5"]]
+    };
+    const box = document.getElementById('metrics');
+    function show(k) {
+      box.innerHTML = DATA[k].map(([l, v, f]) => `<div class="metric${f ? ' flag' : ''}"><span>${l}</span><strong>${v}</strong></div>`).join('');
+      document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.k === k));
+    }
+    document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => show(t.dataset.k)));
+    show('property');
     document.getElementById('year').textContent = new Date().getFullYear();
-
     function copyEmail() {
       navigator.clipboard.writeText('joseph@eldo.network').then(() => {
-        const el = document.getElementById('copy-status-footer');
-        if (el) { el.style.opacity = '1'; setTimeout(() => el.style.opacity = '0', 2000); }
+        const el = document.getElementById('copied');
+        el.textContent = 'Copied to clipboard';
+        setTimeout(() => el.textContent = '', 2000);
       });
     }
-
-    function resetForm() {
-      document.getElementById('quote-result').classList.add('hidden');
-      document.getElementById('quote-form').classList.remove('hidden');
-    }
-
-    function formatCurrency(n) {
-      return '$' + n.toLocaleString('en-US');
-    }
-
-    document.getElementById('quote-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = document.getElementById('quote-btn');
-      btn.textContent = 'Calculating…';
-      btn.disabled = true;
-
-      const fd = new FormData(e.target);
-      const payload = {
-        industry: fd.get('industry'),
-        gb_size: fd.get('gb_size'),
-        source_count: fd.get('source_count'),
-        has_pii: fd.get('has_pii'),
-        needs_dedup: fd.has('needs_dedup'),
-        needs_entity_resolution: fd.has('needs_entity_resolution'),
-        needs_llm_enrichment: fd.has('needs_llm_enrichment'),
-        needs_schema_redesign: fd.has('needs_schema_redesign'),
-        unstructured: fd.has('unstructured'),
-        expedited: fd.get('expedited') === 'true',
-        email: fd.get('email'),
-      };
-
-      try {
-        const res = await fetch('/api/quote', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-        const data = await res.json();
-
-        document.getElementById('quote-price').textContent = data.price_low === null
-          ? 'Let\'s talk'
-          : formatCurrency(data.price_low) + ' – ' + formatCurrency(data.price_high);
-        document.getElementById('quote-days').textContent = data.delivery_range ?? 'Scoped on first call';
-        document.getElementById('quote-email').textContent = payload.email;
-        document.getElementById('quote-review').classList.toggle('hidden', !data.manual_review);
-
-        document.getElementById('quote-form').classList.add('hidden');
-        document.getElementById('quote-result').classList.remove('hidden');
-      } catch (err) {
-        alert('Something went wrong. Please email hello@eldo.network directly.');
-      }
-
-      btn.textContent = 'Get your estimate →';
-      btn.disabled = false;
-    });
   </script>
 </body>
 </html>

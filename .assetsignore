@@ -1,0 +1,8 @@
+.dev.vars
+.wrangler
+.git
+.gitignore
+.claude
+worker.js
+wrangler.jsonc
+functions
