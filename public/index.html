@@ -174,7 +174,7 @@
           <div class="tabs" role="tablist" aria-label="Example business">
             <button class="tab" role="tab" data-k="property" aria-selected="true">Property</button>
             <button class="tab" role="tab" data-k="clinic" aria-selected="false">Clinic</button>
-            <button class="tab" role="tab" data-k="distribution" aria-selected="false">Distribution</button>
+            <button class="tab" role="tab" data-k="contractor" aria-selected="false">Contractor</button>
             <button class="tab" role="tab" data-k="services" aria-selected="false">Services</button>
           </div>
           <div id="metrics"></div>
@@ -222,7 +222,7 @@
         <ul class="who-list">
           <li>Property and family offices</li>
           <li>Health practices and clinics</li>
-          <li>Distribution and the trades</li>
+          <li>Contractors and home services</li>
           <li>Professional services</li>
         </ul>
         <p class="tail">And most businesses that run on more software than they'd like.</p>
@@ -252,9 +252,9 @@
           <p class="pull">Small, on your own data, in your own environment. We only go bigger if the first piece proves itself.</p>
         </div>
         <ol class="steps">
-          <li><h3>A conversation.</h3><p>What does your office do by hand, and what does it cost you? 30 minutes, no pitch deck.</p></li>
-          <li><h3>A first look at your own numbers, on us.</h3><p>A personal view built on the system you already have, in your own environment. No charge, so you can see what it's like before deciding anything.</p></li>
-          <li><h3>A project, only if the first piece earns it.</h3><p>Scoped to the result you want and priced up front.</p></li>
+          <li><h3>A free conversation.</h3><p>What does your office do by hand, and what does it cost you? 30 minutes, no pitch deck, no obligation.</p></li>
+          <li><h3>Start small.</h3><p>One view of your own numbers, built on the system you already have. Scoped and priced up front, so you can see the value before committing to more.</p></li>
+          <li><h3>A project, only if the first piece earns it.</h3><p>Built around the result you want, at a fixed price you agree to before work starts.</p></li>
           <li><h3>Ongoing care, if you want it.</h3><p>We keep it running and make small changes as you go.</p></li>
         </ol>
       </div>
@@ -265,7 +265,7 @@
       <div class="wrap">
         <div class="about">
           <h2>Who's behind it.</h2>
-          <p>I'm Joseph Schwartz. I've spent twelve years building the systems behind the scenes, for city governments, a startup I co-founded, and a large enterprise. At that enterprise, in about two months, the work took an operation from about <span class="fig">a million dollars a quarter</span> to about <span class="fig">fifty thousand</span>.</p>
+          <p>I'm Joseph Schwartz. I've spent twelve years building the systems behind the scenes, for city governments, a startup I co-founded, and a large enterprise. At that enterprise, I automated the work of a 12-person consulting team, before today's AI tools, and cut its cost from about <span class="fig">$1 million a quarter</span> to about <span class="fig">$50,000</span> in two months.</p>
           <p>Now I bring the same work to owner-run businesses, without the big-company price or the big-company risk.</p>
         </div>
       </div>
@@ -296,7 +296,7 @@
     const DATA = {
       property: [["Rent collected this month","94%"],["Payments late","3",1],["Leases up in the next 60 days","5"],["Tenant insurance lapsed","2",1]],
       clinic: [["Appointments today","38"],["No-shows this week","6",1],["Refills and reorders due","14"],["Unpaid claims over 30 days","$18,400",1]],
-      distribution: [["Orders shipped yesterday","112"],["Invoices past due","9",1],["Items running low","7",1],["Jobs scheduled this week","23"]],
+      contractor: [["Jobs scheduled this week","23"],["Invoices past due","9",1],["Estimates awaiting a reply","6"],["Materials running low","4",1]],
       services: [["Hours billed this week","312"],["Unpaid invoices","$42,750",1],["Projects over budget","2",1],["Proposals awaiting a reply","5"]]
     };
     const box = document.getElementById('metrics');
