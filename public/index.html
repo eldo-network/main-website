@@ -10,7 +10,40 @@
   <meta property="og:description" content="Eldo builds modern tools around the software you already have, so the work gets done on its own and you can see your business from your phone." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://eldo.network/" />
+  <link rel="canonical" href="https://eldo.network/" />
+  <link rel="alternate" type="text/markdown" href="/index.md" title="Eldo, Markdown version" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="Eldo, plain-text summary" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Eldo",
+    "legalName": "Eldo Network LLC",
+    "url": "https://eldo.network/",
+    "email": "joseph@eldo.network",
+    "description": "Eldo builds modern tools for owner-run businesses around the software they already have, so routine work gets done on its own and the owner can see how the business is doing from a phone. Projects are scoped and priced up front; the first step is a free 30-minute conversation.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Long Beach", "addressRegion": "CA", "addressCountry": "US" },
+    "areaServed": { "@type": "Country", "name": "United States" },
+    "founder": { "@type": "Person", "name": "Joseph Schwartz" },
+    "serviceType": [
+      "Business process automation",
+      "Owner dashboards and reporting",
+      "Systems integration",
+      "Custom internal apps",
+      "Legacy software migration",
+      "Ongoing care and maintenance"
+    ],
+    "audience": { "@type": "BusinessAudience", "audienceType": "Owner-run small and mid-size businesses: property and family offices, health practices and clinics, contractors and home services, professional services" },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "joseph@eldo.network",
+      "availableLanguage": "English",
+      "description": "To get a quote, email what the business does and its size, the software and spreadsheets involved, the problem and what it costs in hours or dollars, the result wanted, and timing. The reply comes with a scope and a fixed price, usually within two business days."
+    }
+  }
+  </script>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23b08a3e'/></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,6 +131,13 @@
     @media (min-width: 1000px) { .build-grid { grid-template-columns: repeat(3, 1fr); } }
     .build { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 26px; }
     .build p { margin-top: 10px; color: var(--muted); }
+    .own { margin-top: 40px; max-width: 46em; padding-left: 20px; border-left: 3px solid var(--detail); }
+    .own p { margin-top: 8px; color: var(--muted); }
+    @media (min-width: 1000px) { .build-grid.pricing-grid { grid-template-columns: 1fr 1fr; } }
+    .build .price { margin-top: 6px; font-family: var(--head-font); font-size: 1.15rem; color: var(--accent); font-weight: 600; }
+    .pricing-notes { margin-top: 32px; max-width: 46em; display: grid; gap: 12px; color: var(--muted); }
+    .pricing-notes strong { color: var(--ink); font-weight: 600; }
+    .build .outcome { display: block; margin-bottom: 6px; color: var(--ink); font-weight: 600; }
     .build.note { background: transparent; border-style: dashed; display: flex; align-items: center; }
 
     /* Who it's for */
@@ -124,7 +164,7 @@
     /* About */
     .about { max-width: 720px; }
     .about p { margin-top: 20px; font-size: 1.15rem; }
-    .about .fig { color: var(--accent); font-weight: 600; }
+    .about .fig, .own .fig { color: var(--accent); font-weight: 600; }
 
     /* Contact */
     .contact { background: var(--band); text-align: center; }
@@ -146,6 +186,7 @@
       <div class="nav-links">
         <a href="#build" class="hide-sm">What we build</a>
         <a href="#how" class="hide-sm">How it starts</a>
+        <a href="#pricing" class="hide-sm">Pricing</a>
         <a href="#about" class="hide-sm">About</a>
         <a href="#contact" class="btn btn-ghost" style="padding:10px 18px">Let's talk</a>
       </div>
@@ -207,10 +248,15 @@
         <div class="build-grid">
           <div class="build"><h3>A dashboard you check over coffee.</h3><p>The handful of numbers that tell you how the business is doing, up to date every morning, on your phone.</p></div>
           <div class="build"><h3>The report that builds itself.</h3><p>The weekly or month-end report someone spends a day pulling together, ready before anyone asks.</p></div>
-          <div class="build"><h3>Your systems, finally talking to each other.</h3><p>Accounting, scheduling, inventory and spreadsheets stop disagreeing, and nobody retypes between them.</p></div>
+          <div class="build"><h3>Your systems, finally talking to each other.</h3><p>Accounting, scheduling, inventory and spreadsheets brought together, so all your information is in one place and the numbers agree.</p></div>
+          <div class="build"><h3>Data entry that does itself.</h3><p>Orders, invoices and forms that someone types from one system into the next, entered automatically and checked along the way.</p></div>
           <div class="build"><h3>A simple app for the thing you track in a spreadsheet.</h3><p>Built around how your team actually works, with the right people seeing the right things.</p></div>
           <div class="build"><h3>Moving off old software without stopping work.</h3><p>When it's time to replace a system, we move you over in steps while the business keeps running.</p></div>
-          <div class="build note"><p style="margin:0">Not sure which of these you need? That's what the first conversation is for.</p></div>
+          <div class="build note" style="grid-column:1/-1"><p style="margin:0">Not sure which of these you need? That's what the first conversation is for.</p></div>
+        </div>
+        <div class="own">
+          <h3>Own it instead of renting it.</h3>
+          <p>When I priced the big dashboard software vendors for a small team, licenses alone came to <span class="fig">$50,000 to $100,000 a year</span>, before anyone connected the data. With Eldo you pay once for the build. It runs in your own account, often on systems you already pay for, and upkeep is there if you want it. The dashboards are yours to keep: no licenses, no per-user fees.</p>
         </div>
       </div>
     </section>
@@ -239,7 +285,7 @@
         <div class="bigger-points">
           <div><h3>Your records stay protected.</h3><p>Sensitive information is locked down, and you decide who can see what.</p></div>
           <div><h3>Nothing breaks when you grow.</h3><p>A second location or twice the volume doesn't mean starting over.</p></div>
-          <div><h3>You hold the keys.</h3><p>Everything runs in accounts you own, and your data stays yours.</p></div>
+          <div><h3>You hold the keys.</h3><p>Everything runs in accounts you own. No licenses to renew, and your data stays yours.</p></div>
         </div>
       </div>
     </section>
@@ -257,6 +303,25 @@
           <li><h3>A project, only if the first piece earns it.</h3><p>Built around the result you want, at a fixed price you agree to before work starts.</p></li>
           <li><h3>Ongoing care, if you want it.</h3><p>We keep it running and make small changes as you go.</p></li>
         </ol>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="rule-top">
+      <div class="wrap">
+        <h2>What it costs.</h2>
+        <p class="muted" style="margin-top:16px;max-width:38em">A fixed price, agreed before work starts. You own what we build, it runs in your own account, and there are no licenses.</p>
+        <div class="build-grid pricing-grid">
+          <div class="build"><h3>One view.</h3><p class="price">From $10,000*</p><p><strong class="outcome">See your numbers.</strong> One system. The numbers you check most, on your phone. Up to 2 dashboards, view-only.</p></div>
+          <div class="build"><h3>Connected.</h3><p class="price">From $40,000*</p><p><strong class="outcome">Everything in one place.</strong> Up to 3 systems connected, so all your information is in one place. Up to 5 dashboards and up to 5 reports. Need to enter and update records too? Add an app for that, from $10,000 each.</p></div>
+          <div class="build"><h3>Whole business.</h3><p class="price">From $95,000*</p><p><strong class="outcome">Streamline your business.</strong> Up to 5 systems, up to 10 dashboards, reports, and alerts when a number needs your attention. Two simple apps to enter and update records (more from $10,000 each), training for your team, and the first 3 months of upkeep included.</p></div>
+          <div class="build note"><div><h3>Bigger or regulated work.</h3><p class="price">Let's talk.</p><p>Moving off a system the business depends on, health records, several locations.</p></div></div>
+        </div>
+        <div class="pricing-notes">
+          <p><strong>Start with One view.</strong> Move up to a bigger option within 90 days and the full One view price is credited.</p>
+          <p>A <strong>system</strong> is one place your data lives, such as your accounting, scheduling or property software, or a spreadsheet your team keeps up. A <strong>report</strong> is emailed to you on a schedule, or downloaded to Excel or PDF.</p>
+          <p>*Prices go up with messy data, more locations, sensitive records, or software that won't export. You'll know the exact price before you commit. Monthly upkeep is optional and priced with the build.</p>
+        </div>
       </div>
     </section>
 

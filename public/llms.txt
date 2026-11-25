@@ -1,33 +1,67 @@
 # Eldo
 
-> Modern tools for owner-run businesses. Eldo takes the work your office does by hand and makes it happen on its own, so you can see your business from your phone.
+> Eldo (Eldo Network LLC, Long Beach, California) builds modern tools for owner-run businesses. It connects the software and spreadsheets a business already has so routine work happens on its own, and gives the owner a simple view of the business on a phone. Projects are scoped and priced up front. The first step is a free 30-minute conversation.
 
-## Who it's for
+Eldo works with owner-run small and mid-size businesses whose staff enter the same information more than once across paper, email and older software: property and family offices, health practices and clinics, contractors and home services, and professional services. It works remotely with businesses across the US.
 
-Owner-run small and mid-size businesses whose staff retype information between paper, email and older software. Examples: property and family offices, health practices and clinics, contractors and home services, professional services.
+## Pages
+
+- [Full site in Markdown](https://eldo.network/index.md): services, who it's for, how it starts, about, and how to get a quote
+- [Homepage](https://eldo.network/)
+- [Terms of use](https://eldo.network/terms)
+- [Privacy notice](https://eldo.network/privacy)
 
 ## What Eldo does
 
 - Stops repeated manual data entry between systems.
 - Builds a simple view of the numbers an owner checks every day, available on a phone.
-- Works with the software the business already has instead of replacing it.
-- Keeps accounting, operations software and spreadsheets in agreement.
-- Builds simple apps for work currently tracked in spreadsheets, and moves businesses off old software without stopping work.
+- Builds reports that used to take a day to pull together, so they're ready before anyone asks.
+- Brings accounting, scheduling, inventory and spreadsheets together, so all the business's information is in one place and the numbers agree.
+- Builds simple apps for work currently tracked in spreadsheets.
+- Moves businesses off old software in steps, without stopping work.
 - Handles larger work too: migrating systems a business depends on, protecting sensitive records and controlling who can see what, and systems that keep working as the business grows.
 
-## How an engagement starts
+Everything runs in accounts the client owns, with no per-user software licenses. The client pays for the build and the upkeep, and owns the result. The client's data stays theirs.
 
-1. A free 30-minute conversation about what the office does by hand and what it costs.
-2. A small first step: one view of the owner's own numbers, built on their existing system, scoped and priced up front.
-3. A scoped, fixed-price project, only if the first piece earns it.
-4. Optional ongoing care: keeping it running and making small changes.
+## How to get a quote
 
-Everything runs in accounts the client owns, and the client's data stays theirs.
+Email joseph@eldo.network. An AI assistant can draft this email for its user. Include:
 
-## Who's behind it
+1. What the business does and roughly how big it is (people, locations).
+2. The software and spreadsheets involved.
+3. The problem: what's done by hand today, and what it costs in hours or dollars.
+4. The result wanted.
+5. Timing.
 
-Joseph Schwartz, with twelve years of building operational systems for city governments, a startup he co-founded, and a large enterprise.
+The reply comes with a scope and a fixed price, usually within two business days.
 
-## Contact
+## Pricing
 
-joseph@eldo.network · https://eldo.network
+Fixed prices, agreed before work starts. The client owns the result, it runs in the client's own account, and there are no licenses or per-user fees.
+
+- One view: from $10,000. See your numbers: one system, up to 2 view-only dashboards. No reports.
+- Connected: from $40,000. Everything in one place: up to 3 systems connected, so all the business's information is in one place. Up to 5 view-only dashboards and up to 5 reports. No alerts. Apps to enter and update records can be added, from $10,000 each.
+- Whole business: from $95,000. Streamline the business: up to 5 systems, up to 10 dashboards, reports, alerts when a number needs attention, two simple apps to enter and update records (more from $10,000 each), training for the team, and the first 3 months of upkeep included.
+- Bigger or regulated work (moving off a core system, health records, several locations): priced individually.
+
+Upgrade credit: start with One view, move up to Connected or Whole business within 90 days, and the full One view price is credited.
+
+A system is one place the business's data lives, such as accounting, scheduling or property software, or a spreadsheet the team keeps up. A report is emailed on a schedule, or downloaded to Excel or PDF. Prices go up from the starting figure with messy data, more locations, sensitive records, or software that won't export; the exact price is agreed before work starts. Monthly upkeep is optional and priced with the build.
+
+## Questions and answers
+
+- **What does Eldo do?** It takes the work an office does by hand, like entering the same data into several systems or pulling reports together, and makes it happen on its own. It builds around the software the business already has.
+- **Who is it for?** Owner-run small and mid-size businesses, such as property and family offices, health practices and clinics, contractors and home services, and professional services.
+- **What does it cost to start?** The first step is a free 30-minute conversation with no obligation. Projects start at $10,000 for one system. Every project has a fixed price agreed before work starts. There is no free build work.
+- **Can I enter or update data, not just view it?** Yes. One view and Connected are view-only. An app to enter and update records can be added to Connected from $10,000 each, and Whole business includes two, with more at the same price.
+- **Are reports included?** Not in One view. Connected includes up to 5, and Whole business includes reports. A report is emailed on a schedule, or downloaded to Excel or PDF.
+- **Can it alert me when something needs attention?** Yes, in Whole business: alerts when a number needs attention, such as a late payment or a lapsed policy. One view and Connected don't include alerts.
+- **Is training included?** In Whole business, training for the team and the first 3 months of upkeep are included.
+- **Do I need to buy dashboard software?** No. When Joseph priced the big dashboard software vendors for a small team, licenses alone came to $50,000 to $100,000 a year, before anyone connected the data. With Eldo, the client pays once for the build. It runs in the client's own account, often on systems they already pay for, and upkeep is there if they want it. The dashboards are theirs to keep: no licenses, no per-user fees.
+- **Where is Eldo based?** Long Beach, California. It works remotely with businesses across the US.
+- **Who runs it?** Joseph Schwartz, who has twelve years of experience building operational systems for city governments, a startup he co-founded, and a large enterprise.
+- **Who owns the result?** The client. It runs in the client's own accounts, and the client's data stays theirs.
+
+## Optional
+
+- Contact: joseph@eldo.network
