@@ -18,7 +18,7 @@ Eldo keeps what works and builds around it. When something has to go, it's repla
 - **A dashboard you check over coffee.** The handful of numbers that show how the business is doing, up to date every morning, on a phone.
 - **The report that builds itself.** The weekly or month-end report someone spends a day pulling together, ready before anyone asks.
 - **Systems that talk to each other.** Accounting, scheduling, inventory and spreadsheets brought together, so all the business's information is in one place and the numbers agree.
-- **Data entry that does itself.** Orders, invoices and forms that someone types from one system into the next, entered automatically and checked along the way.
+- **Automated data entry.** Orders, invoices and forms the team copies from one system into another, entered automatically and checked along the way.
 - **A simple app for the thing tracked in a spreadsheet.** Built around how the team actually works, with the right people seeing the right things.
 - **Moving off old software without stopping work.** The business moves to a new system in steps while it keeps running.
 
