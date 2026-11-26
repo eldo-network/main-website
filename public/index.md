@@ -1,6 +1,6 @@
 # Eldo
 
-> Modern tools for owner-run businesses. Eldo builds modern tools around the software a business already has, so the routine work gets done on its own and the owner can see how the business is doing from a phone.
+> Modern tools for owner-run businesses. Most businesses run on good people, a few spreadsheets and software that doesn't quite fit. Eldo builds modern tools around what a business already has, so all its information is in one place and the owner can focus on what they do best.
 
 Run by Eldo Network LLC, based in Long Beach, California. Works remotely with businesses across the US. Website: https://eldo.network
 

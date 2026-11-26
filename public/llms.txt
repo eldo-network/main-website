@@ -1,6 +1,6 @@
 # Eldo
 
-> Eldo (Eldo Network LLC, Long Beach, California) builds modern tools for owner-run businesses. It connects the software and spreadsheets a business already has so routine work happens on its own, and gives the owner a simple view of the business on a phone. Projects are scoped and priced up front. The first step is a free 30-minute conversation.
+> Eldo (Eldo Network LLC, Long Beach, California) builds modern tools for owner-run businesses. It builds around the software and spreadsheets a business already has, so all its information is in one place and the owner can focus on what they do best. Projects are scoped and priced up front. The first step is a free 30-minute conversation.
 
 Eldo works with owner-run small and mid-size businesses whose staff enter the same information more than once across paper, email and older software: property and family offices, health practices and clinics, contractors and home services, and professional services. It works remotely with businesses across the US.
 
@@ -50,7 +50,7 @@ A system is one place the business's data lives, such as accounting, scheduling 
 
 ## Questions and answers
 
-- **What does Eldo do?** It takes the work an office does by hand, like entering the same data into several systems or pulling reports together, and makes it happen on its own. It builds around the software the business already has.
+- **What does Eldo do?** It brings together the information spread across a business's software and spreadsheets, so it's all in one place. It builds around what the business already has, and can also automate work the office does by hand, like entering the same data into several systems.
 - **Who is it for?** Owner-run small and mid-size businesses, such as property and family offices, health practices and clinics, contractors and home services, and professional services.
 - **What does it cost to start?** The first step is a free 30-minute conversation with no obligation. Projects start at $10,000 for one system. Every project has a fixed price agreed before work starts. There is no free build work.
 - **Can I enter or update data, not just view it?** Yes. One view and Connected are view-only. An app to enter and update records can be added to Connected from $10,000 each, and Whole business includes two, with more at the same price.
