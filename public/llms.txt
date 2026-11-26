@@ -13,7 +13,7 @@ Eldo works with owner-run small and mid-size businesses whose staff enter the sa
 
 ## What Eldo does
 
-- Stops repeated manual data entry between systems.
+- Automates data entry between systems (orders, invoices, forms), and can add quality checks that catch mistakes along the way.
 - Builds a simple view of the numbers an owner checks every day, available on a phone.
 - Builds reports that used to take a day to pull together, so they're ready before anyone asks.
 - Brings accounting, scheduling, inventory and spreadsheets together, so all the business's information is in one place and the numbers agree.
